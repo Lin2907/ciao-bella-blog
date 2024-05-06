@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-hob=07is7jo5rll_px^3et%9%a$^e^zx@%@_4j0p$cs#$eag)f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [ '8000-lin2907-ciaobellablog-csk6u9f5yeo.ws-eu111.gitpod.io']
+ALLOWED_HOSTS = ['8000-lin2907-ciaobellablog-5vqh9e7nikk.ws-eu111.gitpod.io']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'home_page'
 ]
 
 MIDDLEWARE = [
