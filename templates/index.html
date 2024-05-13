@@ -10,7 +10,7 @@
           <div class="container">
             <div class="row justify-content-around">
               <div class="col-lg-8 col-md-12" id = "image"> <!-- Use col-lg-8 for larger screens, and col-md-12 for smaller screens -->
-                  <img src="assets/images/me.jpg" alt="My photo" class="img-fluid">
+                <img src="{% static 'images/me.jpg' %}" alt="My photo" class="img-fluid">
                   <p id ="cover-text">It's time to get your <span>GLOW</span> back.</p>
               </div>
               <div class="col-lg-4 col-md-12">
@@ -48,7 +48,7 @@
           </div>
           <div class="col-lg-8 col-md-12">
         <a href ="https://lin2907.github.io/Symphony/" target="_blank">
-          <img src = "assets/images/simphony.png" class="frame">
+          <img src="{% static 'images/simphony.png' %}" class="frame">
            </a>
       </div>
           </div>
@@ -57,13 +57,14 @@
     <h3 style = "text-align: center;"> Product picks and Favorites </h3>
     <hr>
     <div class ="gallery-wrap">
-      <img src="assets/images/back-arrow.png" id="back">   <!---taken from https://icons8.com/icons/set/arrow-->
+      <img src="{% static 'images/back-arrow.png' %}" id="back">  <!---taken from https://icons8.com/icons/set/arrow-->
     <div class="gallery">
       
 <div class="images"></div>
       
 </div>
-<img src="assets/images/next-arrow.png" id="next">
+<img src="{% static 'images/next-arrow.png' %}" id="next">
+
   </div>
   </div>
   <!--Knowledge Quiz-->
@@ -71,7 +72,7 @@
   <div class="container recommend">
     <div class="row justify-content-around">
       <div class="col-lg-8 col-md-12 knowledge">
-        <img src = "assets/images/quiz.jpg" class ="frame">
+        <img src="{% static 'images/quiz.jpg' %}" class="frame">
         <button id ="quiz"><a href="https://lin2907.github.io/general-knowledge-quiz/" target="_blank">Take the Quiz </a></button>
         </div>
         <div class="col-lg-4 col-md-12">
