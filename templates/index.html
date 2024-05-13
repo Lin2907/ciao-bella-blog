@@ -1,5 +1,69 @@
-{% extends "base.html" %}{% block content %}
+{% extends "base.html" %}
+{% block content %}
 
 {% load static %}
 
 <!-- index.html starts here -->
+
+<div class="container recommend">
+    <div class="row justify-content-around">
+      <div class="col-lg-4 col-md-12">
+        <h3> The Power of Healthy Food Choices</h3>
+        <p>Consuming a balanced diet rich in fruits, vegetables, whole grains, lean proteins, <br>and healthy fats provides essential nutrients that support optimal bodily functions.<br>
+          The connection between diet and mental health is profound. Research suggests that a diet high in processed foods and sugar may increase the risk of depression and anxiety,
+          while a diet abundant in fruits, vegetables, and omega-3 fatty acids may promote positive mood and mental well-being. <br>
+          <br>
+          For those looking to enjoy healthy and delicious meals without the hassle of cooking, 
+          I highly recommend <a href ="https://lin2907.github.io/Symphony/" style="text-decoration:none" target ="_blank"><em style = "color:rgb(240, 9, 125)" >Restaurant Simphony.</em></a>
+          <br>
+          <br>
+          Their menu features a variety of nutritious options made with fresh, locally-sourced ingredients. <br>
+          From vibrant salads and nourishing grain bowls to flavorful vegetarian and vegan dishes, there's something for everyone to enjoy.
+          <br>
+          <br>
+          Plus, the cozy ambiance and friendly staff make dining at 
+          <a href ="https://lin2907.github.io/Symphony/" style="text-decoration:none" target ="_blank"><em style = "color:rgb(240, 9, 125)">Restaurant Simphony</em></a> a truly delightful experience.</p>
+          </div>
+          <div class="col-lg-8 col-md-12">
+        <a href ="https://lin2907.github.io/Symphony/" target="_blank">
+          <img src = "assets/images/simphony.png" class="frame">
+           </a>
+      </div>
+          </div>
+          </div>
+    <!--Gallery-->
+    <h3 style = "text-align: center;"> Product picks and Favorites </h3>
+    <hr>
+    <div class ="gallery-wrap">
+      <img src="assets/images/back-arrow.png" id="back">   <!---taken from https://icons8.com/icons/set/arrow-->
+    <div class="gallery">
+      
+<div class="images"></div>
+      
+</div>
+<img src="assets/images/next-arrow.png" id="next">
+  </div>
+  </div>
+  <!--Knowledge Quiz-->
+  <section class="about-me">
+  <div class="container recommend">
+    <div class="row justify-content-around">
+      <div class="col-lg-8 col-md-12 knowledge">
+        <img src = "assets/images/quiz.jpg" class ="frame">
+        <button id ="quiz"><a href="https://lin2907.github.io/general-knowledge-quiz/" target="_blank">Take the Quiz </a></button>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <h3> Practice Knowledge...</h3>
+          <p>The connection between beauty and intelligence is complex and often subject to cultural and societal perceptions.<br>Studies have shown that individuals often hold stereotypes 
+            associating physical attractiveness with positive attributes such as intelligence, competence, and success. 
+            This phenomenon, known as the "halo effect," can lead to biased perceptions and assumptions about a person's intelligence based on their appearance.</p>
+            <br>
+            <p>It's essential to recognize that beauty and intelligence are multifaceted constructs that encompass a range of attributes and experiences. 
+              While there may be societal perceptions and stereotypes linking the two, individuals should be evaluated based on their unique qualities, talents, 
+              and contributions rather than superficial characteristics. Ultimately, both beauty and intelligence are valuable aspects of human diversity and should 
+              be celebrated in their own right.</p>
+        </div>
+        </div>
+      </div>
+  </section>
+  {% endblock %}

@@ -7,7 +7,7 @@ class PostList(generic.ListView):
 # Displays all of blog posts"
 
     model = BlogPost
-    template_name = "home_page/post_list.html"
+    template_name = "index.html"
 
 
 
