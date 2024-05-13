@@ -48,3 +48,11 @@ class BlogPostTag(models.Model):
 
     def __str__(self):
         return f'{self.post.title} - {self.tag.name}'
+
+# Images model
+
+class Image(models.Model):
+    post = models.ForeignKey(BlogPost, related_name='images', on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return f"{self.post.title}"
