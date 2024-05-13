@@ -8,7 +8,8 @@ STATUS = ((0, "Draft"), (1, "Published"))
 #Blog post model
 
 class BlogPost(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200 ,  unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE , related_name="blog_posts")
     published_date = models.DateTimeField(auto_now_add=True)
