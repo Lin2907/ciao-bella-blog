@@ -10,4 +10,3 @@ class PostList(generic.ListView):
     template_name = "index.html"
 
 
-
