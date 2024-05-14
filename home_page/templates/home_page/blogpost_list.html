@@ -9,11 +9,13 @@
 <body>
     
     <div class="images">
-        {% for post in post_list %}
+        {% for post in blogpost_list %}
             <div class="image-container">
+                <!--
                 <div class="image" data-post-url="{% url 'post_detail' post.id %}">
-                    <img src="{{ post.get_absolute_url }}" alt="{{ post.title }}">
+                    <img src="{{ post.get_absolute_url }}" alt="{{ post.title }}"> -->
                     <div class="text">{{ post.title }}</div>
+                    <div class="text">{{post.excerpt}}</div>
                 </div>
             </div>
         {% endfor %}

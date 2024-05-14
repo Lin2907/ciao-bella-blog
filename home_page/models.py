@@ -20,8 +20,8 @@ class BlogPost(models.Model):
         return f"{self.title}"
     #Method for getting an absolute url in order to use it for the gallery-posts showing
     
-    def get_absolute_url(self):
-        return reverse('post_detail', args=[str(self.id)])
+    #def get_absolute_url(self):
+    #    return reverse('post_detail', args=[str(self.id)])
 
 #Comment model for each post
 
