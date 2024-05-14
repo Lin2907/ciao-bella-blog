@@ -14,10 +14,14 @@ class BlogPost(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE , related_name="blog_posts")
     published_date = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    updated_on = models.DateTimeField(auto_now=True)
+    excerpt = models.TextField(blank=True)
 
     def __str__(self):
         return f"{self.title}"
+    #Method for getting an absolute url in order to use it for the gallery-posts showing
+    
+    def get_absolute_url(self):
+        return reverse('post_detail', args=[str(self.id)])
 
 #Comment model for each post
 
@@ -28,7 +32,7 @@ class Comment(models.Model):
      )
     content = models.TextField()
     approved = models.BooleanField(default=False)
-    created_date = models.DateTimeField(auto_now_add=True)
+    published_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f'Comment by {self.author} on {self.post.title}'

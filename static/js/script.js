@@ -32,11 +32,11 @@ $(document).ready(function() {
       // Click event to redirect to article page
       image.click(function() {
         window.location.href = "post_list.html";   // Need to test if it works
-      });
+      }); 
     }
   });
 
-  let backBtn = document.getElementById("back");
+let backBtn = document.getElementById("back");
 let nextBtn = document.getElementById ("next");
 let scrollGallery = document.querySelector(".gallery");
 

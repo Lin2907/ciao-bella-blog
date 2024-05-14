@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <title>Posts List</title>
+</head>
+
+<body>
+    
+    <div class="images">
+        {% for post in post_list %}
+            <div class="image-container">
+                <div class="image" data-post-url="{% url 'post_detail' post.id %}">
+                    <img src="{{ post.get_absolute_url }}" alt="{{ post.title }}">
+                    <div class="text">{{ post.title }}</div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+
+{% endblock %}
+</html>
+
