@@ -31,7 +31,7 @@ $(document).ready(function() {
   
       // Click event to redirect to article page
       image.click(function() {
-        window.location.href = "post_list.html";   // Need to test if it works
+        window.location.href = "post_detail.html";   // Need to test if it works
       }); 
     }
   });
