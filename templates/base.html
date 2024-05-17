@@ -33,7 +33,7 @@
               <a class="nav-link mr-3" aria-current="page" href="{% url 'index' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mr-3" href="#">Skincare</a>
+              <a class="nav-link mr-3" href="{% url 'blogpost_list' %}">Skincare</a>
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
