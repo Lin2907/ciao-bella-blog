@@ -2,15 +2,15 @@
 
 $(document).ready(function() {
     let images = [
-      { src: "static/images/cosmetics.jpg", text: "Image 1" },
-      { src: "static/images/medicinal.jpg", text: "Image 2" },
+      { src: "static/images/cosmetics.jpg", text: "Image 1" , slug:"glowing-skin"},
+      { src: "static/images/medicinal.jpg", text: "Image 2", slug:"the-power-of-medicinal-products"},
       { src: "static/images/beauty-products.jpg", text: "Image 3" },
-      { src: "static/images/self-care.jpg", text: "Image 4" },
+      { src: "static/images/self-care.jpg", text: "Image 4", slug:"the-wellness-ritual" },
       { src: "static/images/bag.jpg", text: "Image 5" },
-      { src: "static/images/parfume.jpg", text: "Image 6" },
-      { src: "static/images/creams.jpg", text: "Image 7" },
+      { src: "static/images/parfume.jpg", text: "Image 6", slug:"scented-serenity"},
+      { src: "static/images/creams.jpg", text: "Image 7", slug:"glowing-skin" },
       { src: "static/images/beauty-product.jpg", text: "Image 8" },
-      { src: "static/images/cream.jpg", text: "Image 9" },
+      { src: "static/images/cream.jpg", text: "Image 9", slug:"eye-care"},
       { src: "static/images/spa-products.jpg", text: "Image 10"}
     ];
     // Shuffle images
@@ -31,7 +31,9 @@ $(document).ready(function() {
   
       // Click event to redirect to article page
       image.click(function() {
-        window.location.href = "post_detail.html";   // Need to test if it works
+
+        let postSlug = images[i].slug;
+        window.location.href =`/${postSlug}/`;  // Need to test if it works
       }); 
     }
   });
