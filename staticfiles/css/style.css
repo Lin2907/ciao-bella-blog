@@ -84,6 +84,7 @@
       }
  
       #colored a { color:white;
+       font-size: 120%;
        font-weight: bold;
       }
  
@@ -252,6 +253,8 @@
        box-shadow: 8px 8px 20px rgba(46,44,57, 0.5) ;
       
        }
+
+       
   
     /* Footer styles */
     
@@ -295,14 +298,27 @@
     .form-control {
      background-color: white;
      color :rgb(214, 10, 112);
-     border: solid 2px #FAE0ED;
+     border: solid 2px rgb(214, 10, 112);
      font-weight: bold;
     }
+
+    #sign {
+      margin:20px auto;
+      border:5px solid rgb(214, 10, 112);
+    }
+
+    ul { 
+      list-style-type: none;
+      font-size: 80%;
+    }
+
+    
+
  
     .btn:hover {
      background-color: #bef5ea;
      color :darkslategray;
-     border: solid 2px #FAE0ED;
+     border: solid 2px rgb(214, 10, 112);
  
    }
  
