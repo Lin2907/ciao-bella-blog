@@ -2,9 +2,9 @@
 
 $(document).ready(function() {
     let images = [
-      { src: "static/images/cosmetics.jpg" , slug:"glowing-skin"},
+      { src: "static/images/cosmetics.jpg" , slug:"beauty-with-cosmetics-products"},
       { src: "static/images/medicinal.jpg", slug:"the-power-of-medicinal-products"},
-      { src: "static/images/beauty-products.jpg" , slug :"beauty-with-cosmetics-products"},
+      { src: "static/images/beauty-products.jpg" , slug :"magical-makeover"},
       { src: "static/images/self-care.jpg", slug:"the-wellness-ritual" },
       { src: "static/images/bag.jpg", slug: "fashionable-journey" },
       { src: "static/images/parfume.jpg", slug:"scented-serenity"},
@@ -13,7 +13,7 @@ $(document).ready(function() {
       { src: "static/images/cream.jpg", slug:"eye-care"},
       { src: "static/images/spa-products.jpg", slug:"the-world-of-spa-products"}
     ];
-    // Shuffle images
+    // Shuffle images for random display
     images.sort(() => Math.random() - 0.5);
 
     // Display 6 images
