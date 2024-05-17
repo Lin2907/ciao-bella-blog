@@ -2,10 +2,10 @@
 
 $(document).ready(function() {
     let images = [
-      { src: "static/images/cosmetics.jpg", text: "Image 1" , slug:"glowing-skin"},
-      { src: "static/images/medicinal.jpg", text: "Image 2", slug:"the-power-of-medicinal-products"},
-      { src: "static/images/beauty-products.jpg", text: "Image 3" },
-      { src: "static/images/self-care.jpg", text: "Image 4", slug:"the-wellness-ritual" },
+      { src: "static/images/cosmetics.jpg" , slug:"glowing-skin"},
+      { src: "static/images/medicinal.jpg", slug:"the-power-of-medicinal-products"},
+      { src: "static/images/beauty-products.jpg"},
+      { src: "static/images/self-care.jpg", slug:"the-wellness-ritual" },
       { src: "static/images/bag.jpg", text: "Image 5" },
       { src: "static/images/parfume.jpg", text: "Image 6", slug:"scented-serenity"},
       { src: "static/images/creams.jpg", text: "Image 7", slug:"glowing-skin" },

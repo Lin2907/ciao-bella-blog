@@ -1,5 +1,6 @@
 from django.shortcuts import render,get_object_or_404, reverse
 from django.views import generic
+from django.views.generic import ListView
 from .models import BlogPost, Comment
 from django.http import HttpResponseRedirect
 
@@ -10,17 +11,16 @@ def index(request):
 
 # Displays all of blog posts"
 
-class PostList(generic.ListView):
+class PostList(ListView):
     model = BlogPost
     template_name = 'blogpost_list.html'
-
+    context_object_name = 'object_list'
 
 
 def post_detail(request, slug):
     
 # Will display one post from PostList
-    queryset = BlogPost.objects.filter(status=1)
-    post = get_object_or_404(BlogPost, slug=slug)
+    post = get_object_or_404(BlogPost, slug=slug , status=1)
 
     return render(
         request,
