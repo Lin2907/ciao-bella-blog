@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
+
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -10,11 +12,13 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class BlogPost(models.Model):
     title = models.CharField(max_length=200 ,  unique=True)
     slug = models.SlugField(max_length=200, unique=True)
+    featured_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE , related_name="blog_posts")
     published_date = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
+    
 
     def __str__(self):
         return f"{self.title}"
@@ -54,10 +58,4 @@ class BlogPostTag(models.Model):
     def __str__(self):
         return f'{self.post.title} - {self.tag.name}'
 
-# Images model
 
-class Image(models.Model):
-    post = models.ForeignKey(BlogPost, related_name='images', on_delete=models.CASCADE)
-    
-    def __str__(self):
-        return f"{self.post.title}"
