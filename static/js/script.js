@@ -22,10 +22,10 @@ $(document).ready(function() {
       let imageContainer = $("<div>").addClass("image-container");
       let image = $("<div>").addClass("image");
       let img = $("<img>").attr("src", images[i].src);
-      let text = $("<div>").addClass("text").text(images[i].text);
+     // let text = $("<div>").addClass("text").text(images[i].text);//
   
       image.append(img);
-      image.append(text);
+      //image.append(text);//
       imageContainer.append(image);
       gallery.append(imageContainer);
   
