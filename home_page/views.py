@@ -21,12 +21,16 @@ def post_detail(request, slug):
     
 # Will display one post from PostList
     post = get_object_or_404(BlogPost, slug=slug , status=1)
+    comments = post.comments.all().order_by("-published_date")
+    comment_count = post.comments.filter(approved=True).count
 
     return render(
         request,
         "home_page/post_detail.html",
         {
             "post": post,
+            "comments": comments,
+            "comment_count": comment_count,
             
         },
     )
