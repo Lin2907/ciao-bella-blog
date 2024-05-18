@@ -85,6 +85,7 @@
  
       #colored a { color:white;
        font-weight: bold;
+       font-size:120%;
       }
  
       #colored a:hover {
@@ -258,6 +259,9 @@
 
        ul { 
         list-style-type: none;
+      }
+
+      .helptext {
         font-size: 80%;
       }
 
