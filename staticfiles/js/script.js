@@ -2,18 +2,18 @@
 
 $(document).ready(function() {
     let images = [
-      { src: "static/images/cosmetics.jpg", text: "Image 1" },
-      { src: "static/images/medicinal.jpg", text: "Image 2" },
-      { src: "static/images/beauty-products.jpg", text: "Image 3" },
-      { src: "static/images/self-care.jpg", text: "Image 4" },
-      { src: "static/images/bag.jpg", text: "Image 5" },
-      { src: "static/images/parfume.jpg", text: "Image 6" },
-      { src: "static/images/creams.jpg", text: "Image 7" },
-      { src: "static/images/beauty-product.jpg", text: "Image 8" },
-      { src: "static/images/cream.jpg", text: "Image 9" },
-      { src: "static/images/spa-products.jpg", text: "Image 10"}
+      { src: "static/images/cosmetics.jpg" , slug:"beauty-with-cosmetics-products"},
+      { src: "static/images/medicinal.jpg", slug:"the-power-of-medicinal-products"},
+      { src: "static/images/beauty-products.jpg" , slug :"magical-makeover"},
+      { src: "static/images/self-care.jpg", slug:"the-wellness-ritual" },
+      { src: "static/images/bag.jpg", slug: "fashionable-journey" },
+      { src: "static/images/parfume.jpg", slug:"scented-serenity"},
+      { src: "static/images/creams.jpg",  slug:"glowing-skin" },
+      { src: "static/images/beauty-product.jpg", slug:"taint-makeup" },
+      { src: "static/images/cream.jpg", slug:"eye-care"},
+      { src: "static/images/spa-products.jpg", slug:"the-world-of-spa-products"}
     ];
-    // Shuffle images
+    // Shuffle images for random display
     images.sort(() => Math.random() - 0.5);
 
     // Display 6 images
@@ -22,21 +22,21 @@ $(document).ready(function() {
       let imageContainer = $("<div>").addClass("image-container");
       let image = $("<div>").addClass("image");
       let img = $("<img>").attr("src", images[i].src);
-      let text = $("<div>").addClass("text").text(images[i].text);
   
       image.append(img);
-      image.append(text);
       imageContainer.append(image);
       gallery.append(imageContainer);
   
       // Click event to redirect to article page
       image.click(function() {
-        window.location.href = "post_list.html";   // Need to test if it works
-      });
+
+        let postSlug = images[i].slug;
+        window.location.href =`/${postSlug}/`;  // Need to test if it works
+      }); 
     }
   });
 
-  let backBtn = document.getElementById("back");
+let backBtn = document.getElementById("back");
 let nextBtn = document.getElementById ("next");
 let scrollGallery = document.querySelector(".gallery");
 
