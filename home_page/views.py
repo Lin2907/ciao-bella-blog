@@ -4,6 +4,7 @@ from django.views.generic import ListView
 from .models import BlogPost, Comment
 from django.http import HttpResponseRedirect
 from .forms import CommentForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -23,8 +24,23 @@ def post_detail(request, slug):
 # Will display one post from PostList
     post = get_object_or_404(BlogPost, slug=slug , status=1)
     comments = post.comments.all().order_by("-published_date")
-    comment_count = post.comments.filter(approved=True).count
-    comment_form = CommentForm()
+    comment_count = post.comments.filter(approved=True).count()
+
+    if request.method == "POST":
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.author = request.user
+            comment.post = post
+            comment.save()
+            # Reinitialize the form to be empty after saving the comment
+            comment_form = CommentForm()
+        else:
+            # If the form is not valid, it will be returned with errors
+            pass
+    else:
+        # Initialize an empty form if the request method is not POST
+        comment_form = CommentForm()
 
     return render(
         request,
