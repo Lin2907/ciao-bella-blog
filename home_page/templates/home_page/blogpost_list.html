@@ -1,19 +1,94 @@
+
 {% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
-<title>Posts List</title>
+<style>
 
-<div class="images">
-    {% for post in object_list %}
-        <div class="image-container">
-            <div class="image" data-post-url="{% url 'post_detail' post.slug %}">
+    body {
+      background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://res.cloudinary.com/deb30xqb0/image/upload/v1716060243/mv8uoapmvnk4qqil031b.jpg') no-repeat center fixed;
+      background-size: cover;
+      width: 100% ;
+    }
+
+    .post-link {
+        display: block;
+        text-decoration: none;
+        color: rgb(240, 9, 125);
+    }
+    .post-link:hover {
+        text-decoration: rgb(240, 9, 125) underline;
+    }
+
+   
+    #posts {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px auto;
+      width: 80%;
+  }
+
+  #column {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  #blog {
+      border: 5px solid rgb(240, 9, 125);
+      padding: 10px;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #pic img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+  }
+
+  h3, p {
+      margin: 10px 0;
+  }
+  @media only screen and (max-width: 768px) {
+
+    #posts {
+      display: flex;
+      flex-direction: column;
+      margin: 10px 10px;
+      width: 200%;
+  }
+
+  }
+
+</style>
+<div id="posts">
+    <div id="column">
+        <!-- Showing only 5 of 10 posts in column -->
+        {% for post in object_list|slice:":5" %}
+        <div id="blog">
+            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+            <div id="pic" href="{% url 'post_detail' post.slug %}">
                 <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
-                <div class="text">{{ post.title }}</div>
-                <div class="text">{{ post.excerpt }}</div> 
+                <div><h3>{{ post.title }}</h3></div>
+                <div id="posttext"><p>{{ post.excerpt }}</p></div>
             </div>
         </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
+    <div id="column">
+        {% for post in object_list|slice:"5:10" %}
+        <div id="blog">
+            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+            <div id="pic" data-post-url="{% url 'post_detail' post.slug %}">
+                <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                <div><h3>{{ post.title }}</h3></div>
+                <div id="posttext"><p>{{ post.excerpt }}</p></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
-
 {% endblock %}
