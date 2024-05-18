@@ -3,6 +3,7 @@ from django.views import generic
 from django.views.generic import ListView
 from .models import BlogPost, Comment
 from django.http import HttpResponseRedirect
+from .forms import CommentForm
 
 # Create your views here.
 
@@ -23,6 +24,7 @@ def post_detail(request, slug):
     post = get_object_or_404(BlogPost, slug=slug , status=1)
     comments = post.comments.all().order_by("-published_date")
     comment_count = post.comments.filter(approved=True).count
+    comment_form = CommentForm()
 
     return render(
         request,
@@ -31,6 +33,7 @@ def post_detail(request, slug):
             "post": post,
             "comments": comments,
             "comment_count": comment_count,
+            "comment_form": comment_form,
             
         },
     )
