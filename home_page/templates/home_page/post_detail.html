@@ -37,12 +37,17 @@
     </div>
 
     <div class="comment-form">
+        {% if user.is_authenticated %}
         <h2>Leave a Comment</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ comment_form.as_p }}
+        <p>Posting as: {{ user.username }}</p>
+        <form id="commentForm" method="post">
+        {{ comment_form | crispy }}
+        {% csrf_token %}
             <button type="submit">Submit</button>
         </form>
+        {% else %}
+        <p style="color:rgb(240, 9, 125)"><strong>Please Log in to leave a comment</strong></p>
+        {% endif %}
     </div>
 {% endblock %}
 

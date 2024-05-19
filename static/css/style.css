@@ -306,12 +306,32 @@
 
 .comment {
   border: 3px solid rgb(240, 9, 125);
-  padding: 20px;
-  margin: 20px ;
+  padding-bottom: 20px;
+  margin: 20px;
 }
 
+
 .comment p {
+  margin: 20 px;
   text-align: center;
+}
+
+.approval { 
+  color: rgb(240, 9, 125);
+  text-align: center;
+}
+
+.mb-3 {
+  border:  5px solid rgb(240, 9, 125);
+  width:60%;
+  margin:auto;
+}
+
+.comment-form p {
+  text-align: center;
+  color: rgb(240, 9, 125);
+  font-weight: bold;
+  padding-top: 20px;
 
 }
 
@@ -330,16 +350,17 @@
   flex-direction: column;
 }
 
-label { display: none;}
-
 .comment-form form input,
 .comment-form form textarea {
+  max-width: 80%;
   padding: 10px;
   margin : 20px ;
   border: 1px solid rgb(240, 9, 125);
   border-radius: 5px;
   font-size: 1em;
 }
+
+label { display: none;}
 
 .comment-form form button {
   width : 200px;
@@ -354,7 +375,9 @@ label { display: none;}
 }
 
 .comment-form form button:hover {
-  background-color: rgb(240, 9, 125);
+  background-color: rgb(238, 214, 226);
+  color:darkslategray;
+  border:2px solid rgb(240, 9, 125);
 }
 
 /*End of post detail*/

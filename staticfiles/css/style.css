@@ -312,6 +312,7 @@
     }
 
   /*Post detail styles */
+
   .post-detail {
     margin: 20px auto;
     max-width: 50%;
@@ -320,77 +321,98 @@
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-
-.post-detail img {
+  }
+  
+  .post-detail img {
     width: 100%;
     height: auto;
     border-radius: 5px;
-}
-
-.post-detail h3 {
-  margin-top: 20px;
-  font-size: 250%;
-  text-align: center;
-
-}
-
-.post-detail p {
-  font-size: 100%;
-  line-height: 1.6em;
-  margin-top: 20px;
-}
-
-
-.comments {
+  }
+  
+  .post-detail h3 {
+    margin-top: 20px;
+    font-size: 250%;
+    text-align: center;
+  
+  }
+  
+  .post-detail p {
+    font-size: 100%;
+    line-height: 1.6em;
+    margin-top: 20px;
+  }
+  
+  .comments {
     margin-top: 40px;
-}
-
-.comments h2 {
+  }
+  
+  .comments h2 {
     text-align: center;
     font-size: 1.5em;
     margin-bottom: 20px;
     color : rgb(240, 9, 125);
-}
+  }
 
-.comment {
+  .comment {
     border: 3px solid rgb(240, 9, 125);
     padding-bottom: 20px;
     margin: 20px;
-    
-}
-
-.comment p {
+  }
+  
+  
+  .comment p {
+    margin: 20 px;
     text-align: center;
-}
-
-.comment-form {
+  }
+  
+  .approval { 
+    color: rgb(240, 9, 125);
+    text-align: center;
+  }
+  
+  
+  .mb-3 {
+    border:  5px solid rgb(240, 9, 125);
+    width:60%;
+    margin:auto;
+  }
+  
+  .comment-form p {
+    text-align: center;
+    color: rgb(240, 9, 125);
+    font-weight: bold;
+    padding-top: 20px;
+  
+  }
+  
+  .comment-form {
     margin-top: 40px;
-}
-
-.comment-form h2 {
+  }
+  
+  .comment-form h2 {
     text-align: center;
     color : rgb(240, 9, 125);
     font-size: 1.5em;
-}
-
-.comment-form form {
+  }
+  
+  .comment-form form {
     display: flex;
     flex-direction: column;
-}
-
-label { display: none;}
-
-.comment-form form input,
-.comment-form form textarea {
+  }
+  
+  .comment-form form input,
+  .comment-form form textarea {
+    max-width: 80%;
     padding: 10px;
-    margin : 20px;
+    margin : 20px ;
     border: 1px solid rgb(240, 9, 125);
     border-radius: 5px;
     font-size: 1em;
-}
-
-.comment-form form button {
+  }
+  
+  label { display: none;}
+  
+  .comment-form form button {
     width : 200px;
     margin : 20px auto;
     padding: 10px 20px;
@@ -400,18 +422,15 @@ label { display: none;}
     color: white;
     font-size: 1.1em;
     cursor: pointer;
-}
-
-.comment-form form button:hover {
-    background-color: rgb(240, 9, 125);
-}
- 
-    .btn:hover {
-     background-color: #bef5ea;
-     color :darkslategray;
-     border: solid 2px rgb(214, 10, 112);
- 
-   }
+  }
+  
+  .comment-form form button:hover {
+    background-color: rgb(238, 214, 226);
+    color:darkslategray;
+    border:2px solid rgb(240, 9, 125);
+  }
+  
+  /*End of post detail*/
  
    .footer-nav {
      list-style-type: none;
