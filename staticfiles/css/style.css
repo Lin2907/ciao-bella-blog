@@ -87,10 +87,6 @@
        font-size: 100%;
        letter-spacing: 1px;
       }
- 
-      #colored a:hover {
-        color: rgb(243, 206, 206);
-      }
   
       /* Galery  https://www.youtube.com/watch?v=gzXyRa7jwk4 tutorial */
       .gallery {
@@ -362,7 +358,7 @@
   }
 
   h3, p {
-      margin: 10px 0;
+      margin: 20px auto;
   }
 
   /*Post detail styles */

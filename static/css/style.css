@@ -87,10 +87,6 @@
        letter-spacing: 1px;
        font-size:100%;
       }
- 
-      #colored a:hover {
-        color: rgb(243, 206, 206);
-      }
   
       /* Galery */
 
@@ -297,7 +293,7 @@
   }
 
   h3, p {
-      margin: 10px 0;
+      margin: 20px auto;
   }
 
   /* end post list styles*/
