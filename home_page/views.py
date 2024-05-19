@@ -53,3 +53,15 @@ def post_detail(request, slug):
             
         },
     )
+       
+
+def search_posts(request):
+
+        if request.method == "POST":
+            searched = request.POST ['searched']
+            posts=BlogPost.object.filter(title__contains = searched)
+            
+            return render(
+                request, 'home_page/search_posts.html', 
+                {'searched':searched ,'posts': posts}) 
+
