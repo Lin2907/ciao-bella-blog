@@ -15,7 +15,7 @@
     .home {
       width: 100%;
       height :70vh;
-      background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("../images/perfume-pink.jpg") no-repeat center fixed;
+      background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('https://res.cloudinary.com/deb30xqb0/image/upload/v1716060243/mv8uoapmvnk4qqil031b.jpg') no-repeat center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -84,7 +84,7 @@
       }
  
       #colored a { color:white;
-       font-weight:bold;
+       letter-spacing: 1px;
        font-size:100%;
       }
  
@@ -276,7 +276,7 @@
   }
 
   #column {
-      width: 45%;
+      width: 80%;
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -302,7 +302,102 @@
 
   /* end post list styles*/
 
+ /*Post detail styles */
 
+ .post-detail {
+  margin: 20px auto;
+  max-width: 50%;
+  padding: 20px;
+  border: 5px solid rgb(240, 9, 125);
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.post-detail img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.post-detail h3 {
+  margin-top: 20px;
+  font-size: 250%;
+  text-align: center;
+
+}
+
+.post-detail p {
+  font-size: 100%;
+  line-height: 1.6em;
+  margin-top: 20px;
+}
+
+.comments {
+  margin-top: 40px;
+}
+
+.comments h2 {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color : rgb(240, 9, 125);
+}
+
+.comment {
+  border: 3px solid rgb(240, 9, 125);
+  padding: 20px;
+  margin: 20px;
+}
+
+.comment p {
+  text-align: center;
+
+}
+
+.comment-form {
+  margin-top: 40px;
+}
+
+.comment-form h2 {
+  text-align: center;
+  color : rgb(240, 9, 125);
+  font-size: 1.5em;
+}
+
+.comment-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+label { display: none;}
+
+.comment-form form input,
+.comment-form form textarea {
+  padding: 10px;
+  margin : 20px ;
+  border: 1px solid rgb(240, 9, 125);
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.comment-form form button {
+  width : 200px;
+  margin : 20px auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(240, 9, 125);
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+.comment-form form button:hover {
+  background-color: rgb(240, 9, 125);
+}
+
+/*End of post detail*/
   
     /* Footer styles */
     
@@ -395,6 +490,9 @@
      .knowledge {
        padding :0 ;
      }
+     #quiz {
+      left: 20%;
+      }
   
       .gallery-wrap {
         display: flex;
@@ -427,6 +525,20 @@
         font-size:200%;
         padding-top: 10px;
       }
+
+      #posts {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 10px;
+        width: 100%;
+    }
+
+    #column {
+      margin:auto;
      
     }
+    .post-detail {
+      max-width:80%;
+    }
+  }
  
