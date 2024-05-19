@@ -42,12 +42,12 @@
     <div id="column">
         {% for post in object_list|slice:"5:10" %}
         <div id="blog">
-            <a href="{% url 'post_detail' post.slug %}" class="post-link"></a>
+            <a href="{% url 'post_detail' post.slug %}" class="post-link">
             <div id="pic" data-post-url="{% url 'post_detail' post.slug %}">
                 <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
                 <div><h3>{{ post.title }}</h3></div>
                 <div id="posttext"><p>{{ post.excerpt }}</p></div>
-            </div>
+            </div> </a>
         </div>
         {% endfor %}
     </div>

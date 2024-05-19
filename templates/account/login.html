@@ -7,13 +7,25 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
+<style>
+    body {
+      background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://res.cloudinary.com/deb30xqb0/image/upload/v1716060243/mv8uoapmvnk4qqil031b.jpg') no-repeat center fixed;
+      background-size: cover;
+      width: 100% ;
+    } 
+    @media only screen and (max-width: 768px) {
+        body {
+            background: white;
+        }
+    }
+    </style>
 
 <div class="container" id="sign">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
             <h3>{% trans "Sign In" %}</h3>
 
-            <p>{% blocktrans %}Welcome back to the Ciao Bella blog. To leave a comment or like a post, please log in. If
+            <p>{% blocktrans %}To leave a comment or like a post, please log in. If
                 you
                 have not created an account yet, then <a class="link" style="color:rgb(214, 10, 112)" href="{{ signup_url }}">sign up</a>
                 first.{% endblocktrans %}</p>
