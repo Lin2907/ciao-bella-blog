@@ -21,11 +21,18 @@
     <div class="comments">
         <h2>Comments ({{ comment_count }})</h2>
         {% for comment in comments %}
-            <div class="comment">
+            <div class="comment {% if not comment.approved and comment.author == user %}
+            faded{% elif not comment.approved %} d-none{% endif %}">
                 <p><strong>{{ comment.author }}</strong></p>
                 <p>{{ comment.content }}</p>
                 <p>{{ comment.published_date }}</p>
             </div>
+            {% if not comment.approved and comment.author == user %}
+          <p class="approval">
+            This comment is awaiting approval
+          </p>
+          {% endif %}
+        </div>
         {% endfor %}
     </div>
 
