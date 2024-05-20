@@ -445,17 +445,6 @@
      text-decoration: none;
    }
 
-
-   /*Search results list */
-   #results {
-    padding-left: 20px;
-   }
-
-   #post-res {
-    display:flex;
-    align-content: center;
-   }
-
   
   @media only screen and (max-width: 768px) {
         
