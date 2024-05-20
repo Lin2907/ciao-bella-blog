@@ -63,5 +63,49 @@ def search_posts(request):
             
             return render(
                 request, 'home_page/search_posts.html', 
-                {'searched':searched ,'posts': posts}) 
+                {'searched':searched ,'posts': posts})
+
+
+def comment_edit(request, slug, comment_id):
+
+    if request.method == "POST":
+
+        queryset = BlogPost.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        comment = get_object_or_404(Comment, pk=comment_id)
+        post_form = CommentForm(data=request.POST, instance=comment)
+
+        if (
+            post_form.is_valid()
+            and comment.author == request.user
+        ):
+            comment = post_form.save(commit=False)
+            comment.post = post
+            comment.approved = False
+            comment.save()
+            messages.add_message(request, messages.SUCCESS, "Succsessfully Updated!")
+        else:
+            messages.add_message(
+                request, messages.ERROR, "Error updating comment!")
+
+    return HttpResponseRedirect(reverse("post_detail", args=[slug]))
+
+
+def comment_delete(request, slug, comment_id):
+    
+    # Comment delete option
+
+    queryset = BlogPost.objects.filter(status=1)
+    post = get_object_or_404(queryset, slug=slug)
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    if comment.author == request.user:
+        comment.delete()
+        messages.add_message(request, messages.SUCCESS, "Comment Deleted!")
+    else:
+        messages.add_message(
+            request, messages.ERROR, "You can only delete your own comments!"
+        )
+
+    return HttpResponseRedirect(reverse("post_detail", args=[slug]))
 
