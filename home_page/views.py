@@ -59,7 +59,7 @@ def search_posts(request):
 
         if request.method == "POST":
             searched = request.POST ['searched']
-            posts=BlogPost.objects.filter(title__contains = searched)
+            posts=BlogPost.objects.filter(title__icontains = searched)
             
             return render(
                 request, 'home_page/search_posts.html', 
