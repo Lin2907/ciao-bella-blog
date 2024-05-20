@@ -3,20 +3,21 @@
 {% load static %}
 
 {% block content %}
-<title>Search Results</title>
 
-<h1>Search Results for "{{ searched | safe}}"</h1>
 
+<h3 style="text-align:center">Search Results</h3>
+<div id ="post-res">
 {% if posts %}
-    <ul>
+    <ul id="results" style ="text-align:center">
         {% for post in posts %}
             <li>
-                <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
+                <a href="{% url 'post_detail' post.slug %}" style ="color :rgb(240, 9, 125)">{{ post.title | safe}}</a>
             </li>
         {% endfor %}
     </ul>
 {% else %}
     <p>No posts found.</p>
 {% endif %}
+</div>
 
 {% endblock %}

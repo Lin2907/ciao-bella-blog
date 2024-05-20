@@ -382,15 +382,15 @@ label { display: none;}
 
 /*End of post detail*/
   
-    /* Footer styles */
+/* Footer styles */
     
-    footer { 
-      background-color:rgb(214, 10, 112);
-      padding:10px;
-      text-align: center;
-      color: white;
-      font-size: 150%;
-      } 
+footer { 
+  background-color:rgb(214, 10, 112);
+  padding:10px;
+  text-align: center;
+  color: white;
+  font-size: 150%;
+} 
   
     footer a { 
      color:white;
