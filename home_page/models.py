@@ -22,6 +22,11 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return f"{self.title}"
+    
+    def like_count(self):
+        return self.likes.count()
+
+
     #Method for getting an absolute url in order to use it for the gallery-posts showing
     
     #def get_absolute_url(self):
@@ -59,3 +64,16 @@ class BlogPostTag(models.Model):
         return f'{self.post.title} - {self.tag.name}'
 
 
+class LikedPost(models.Model):
+    #A model for user likes on a recipe
+
+    post = models.ForeignKey(
+        BlogPost, on_delete=models.CASCADE, related_name="likes"
+    )
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="post_likes"
+    )
+    liked_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user} likes {self.post.title}"

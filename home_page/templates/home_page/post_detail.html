@@ -16,6 +16,22 @@
         <h3>{{ post.title }}</h3>
         <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
         <p>{{ post.content | safe }}</p>
+        <p>Likes: {{ like_count }}</p>
+        {% if user.is_authenticated %}
+            {% if liked %}
+                <form action="{% url 'unlike_post' post.slug %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit">Unlike</button>
+                </form>
+            {% else %}
+                <form action="{% url 'like_post' post.slug %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit">Like</button>
+                </form>
+            {% endif %}
+        {% else %}
+            <p>Please <a href="{% url 'login' %}">log in</a> to like this post.</p>
+        {% endif %}
     </div>
 
     <div class="comments">

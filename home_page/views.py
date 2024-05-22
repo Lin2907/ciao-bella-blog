@@ -1,7 +1,7 @@
 from django.shortcuts import render,get_object_or_404, reverse
 from django.views import generic
 from django.views.generic import ListView
-from .models import BlogPost, Comment
+from .models import BlogPost, Comment , LikedPost
 from django.http import HttpResponseRedirect
 from .forms import CommentForm
 from django.contrib import messages
@@ -25,6 +25,9 @@ def post_detail(request, slug):
     post = get_object_or_404(BlogPost, slug=slug , status=1)
     comments = post.comments.all().order_by("-published_date")
     comment_count = post.comments.filter(approved=True).count()
+    liked = False
+    if request.user.is_authenticated:
+        liked = LikedPost.objects.filter(post=post, user=request.user)
 
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
@@ -50,6 +53,8 @@ def post_detail(request, slug):
             "comments": comments,
             "comment_count": comment_count,
             "comment_form": comment_form,
+            "liked": liked,
+            "like_count": post.like_count(),
             
         },
     )
@@ -107,5 +112,34 @@ def comment_delete(request, slug, comment_id):
             request, messages.ERROR, "You can only delete your own comments!"
         )
 
-    return HttpResponseRedirect(reverse("post_detail", args=[slug]))
+    return HttpResponseRedirect("post_detail", args=[slug])
+
+    #Likes view
+
+def like_post(request, slug):
+    post = get_object_or_404(BlogPost, slug=slug)
+    user = request.user if request.user.is_authenticated else None
+
+    if user:
+        liked_post, created = LikedPost.objects.get_or_create(post=post, user=user)
+        messages.success(request, "Post liked!")
+    else:
+        messages.info(request, "You must be logged in to like a post.")
+
+    return HttpResponseRedirect('post_detail', slug=slug)
+
+def unlike_post(request, slug):
+    post = get_object_or_404(BlogPost, slug=slug)
+    user = request.user if request.user.is_authenticated else None
+
+    if user:
+        like_post = LikedPost.objects.filter(post=post, user=user)
+
+        if like_post.exists():
+            like_post.delete()
+            messages.success(request, "Unliked!")
+    else:
+        messages.info(request, "You must be logged in to unlike a post.")
+
+    return HttpResponseRedirect(reverse('post_detail', slug=slug))
 
