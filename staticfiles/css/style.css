@@ -311,6 +311,12 @@
       font-size: 80%;
     }
 
+    /*Django message styles */ 
+  #msg {
+    background-color: rgb(214, 10, 112);
+    color:white;
+  }
+
   /*Post detail styles */
 
   .post-detail {

@@ -1,4 +1,4 @@
-from django.shortcuts import render,get_object_or_404, reverse
+from django.shortcuts import render,get_object_or_404, reverse , redirect
 from django.views import generic
 from django.views.generic import ListView
 from .models import BlogPost, Comment , LikedPost
@@ -126,7 +126,7 @@ def like_post(request, slug):
     else:
         messages.info(request, "You must be logged in to like a post.")
 
-    return HttpResponseRedirect('post_detail', slug=slug)
+    return redirect('post_detail', slug=slug)
 
 def unlike_post(request, slug):
     post = get_object_or_404(BlogPost, slug=slug)
@@ -141,5 +141,4 @@ def unlike_post(request, slug):
     else:
         messages.info(request, "You must be logged in to unlike a post.")
 
-    return HttpResponseRedirect(reverse('post_detail', slug=slug))
-
+    return redirect('post_detail', slug=slug)

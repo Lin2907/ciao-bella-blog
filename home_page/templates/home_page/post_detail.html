@@ -16,22 +16,21 @@
         <h3>{{ post.title }}</h3>
         <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
         <p>{{ post.content | safe }}</p>
-        <p>Likes: {{ like_count }}</p>
+        <p style="color:rgb(214, 10, 112)">Likes: {{ like_count }}</p>
         {% if user.is_authenticated %}
             {% if liked %}
                 <form action="{% url 'unlike_post' post.slug %}" method="POST">
                     {% csrf_token %}
-                    <button type="submit">Unlike</button>
+                    <button type="submit" style = "color:rgb(214, 10, 112)">Unlike</button>
                 </form>
             {% else %}
                 <form action="{% url 'like_post' post.slug %}" method="POST">
                     {% csrf_token %}
-                    <button type="submit">Like</button>
+                    <button type="submit" style = "color:rgb(214, 10, 112)" >Like</button> 
+                    
                 </form>
             {% endif %}
-        {% else %}
-            <p>Please <a href="{% url 'login' %}">log in</a> to like this post.</p>
-        {% endif %}
+            {% endif %}
     </div>
 
     <div class="comments">
@@ -66,7 +65,7 @@
             <button type="submit">Submit</button>
         </form>
         {% else %}
-        <p style="color:rgb(240, 9, 125)"><strong>Please Log in to leave a comment</strong></p>
+        <p style="color:rgb(240, 9, 125)"><strong>Please Log in to leave a comment or to like this post</strong></p>
         {% endif %}
     </div>
 
