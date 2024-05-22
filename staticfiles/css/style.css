@@ -313,8 +313,9 @@
 
     /*Django message styles */ 
   #msg {
-    background-color: rgb(214, 10, 112);
-    color:white;
+    background-color: transparent;
+    color:rgb(214, 10, 112);
+    border:1px solid rgb(214, 10, 112);
   }
 
   /*Post detail styles */

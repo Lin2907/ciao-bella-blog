@@ -29,6 +29,11 @@
       width: 80%;
   }
 
+    #post-search {
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+  }
 
   #column {
       width: 45%;
@@ -73,10 +78,18 @@
     }
 }
 </style>
+<div id ="post-search">
+    <form class="form-inline my-2 my-lg-0" method=POST
+    action="{% url 'search_posts'%}">
+    {% csrf_token %}
+        <input class="form-control mr-sm-2" type="search" placeholder="Search Posts" aria-label="Search" name="searched">
+        <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
 <div id="posts">
     <div id="column">
         <!-- Showing only 5 of 10 posts in column -->
-        {% for post in object_list|slice:":5" %}
+        {% for post in object_list|slice:":3" %}
         <div id="blog">
             <a href="{% url 'post_detail' post.slug %}" class="post-link">
             <div id="pic" href="{% url 'post_detail' post.slug %}">
@@ -88,7 +101,7 @@
         {% endfor %}
     </div>
     <div id="column">
-        {% for post in object_list|slice:"5:10" %}
+        {% for post in object_list|slice:"3:10" %}
         <div id="blog">
             <a href="{% url 'post_detail' post.slug %}" class="post-link">
             <div id="pic" data-post-url="{% url 'post_detail' post.slug %}">
@@ -98,6 +111,18 @@
             </div> </a>
         </div>
         {% endfor %}
+        {% if is_paginated %}
+        <nav aria-label="Page Navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a></li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
     </div>
 
 {% endblock %}

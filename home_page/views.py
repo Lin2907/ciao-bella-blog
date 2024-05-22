@@ -1,4 +1,4 @@
-from django.shortcuts import render,get_object_or_404, reverse , redirect
+from django.shortcuts import render,get_object_or_404, reverse, redirect
 from django.views import generic
 from django.views.generic import ListView
 from .models import BlogPost, Comment , LikedPost
@@ -17,6 +17,7 @@ class PostList(ListView):
     model = BlogPost
     template_name = 'blogpost_list.html'
     context_object_name = 'object_list'
+    paginate_by = 6
 
 
 def post_detail(request, slug):
@@ -72,28 +73,26 @@ def search_posts(request):
 
 
 def comment_edit(request, slug, comment_id):
-
+    """
+    view to edit comments
+    """
     if request.method == "POST":
 
-        queryset = BlogPost.objects.filter(status=1)
+        queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comment = get_object_or_404(Comment, pk=comment_id)
-        post_form = CommentForm(data=request.POST, instance=comment)
+        comment_form = CommentForm(data=request.POST, instance=comment)
 
-        if (
-            post_form.is_valid()
-            and comment.author == request.user
-        ):
-            comment = post_form.save(commit=False)
+        if comment_form.is_valid() and comment.author == request.user:
+            comment = comment_form.save(commit=False)
             comment.post = post
             comment.approved = False
             comment.save()
-            messages.add_message(request, messages.SUCCESS, "Succsessfully Updated!")
+            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
         else:
-            messages.add_message(
-                request, messages.ERROR, "Error updating comment!")
+            messages.add_message(request, messages.ERROR, 'Error updating comment!')
 
-    return HttpResponseRedirect(reverse("post_detail", args=[slug]))
+    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
 def comment_delete(request, slug, comment_id):
@@ -112,7 +111,7 @@ def comment_delete(request, slug, comment_id):
             request, messages.ERROR, "You can only delete your own comments!"
         )
 
-    return HttpResponseRedirect("post_detail", args=[slug])
+    return HttpResponseRedirect(reverse("post_detail", args=[slug]))
 
     #Likes view
 
