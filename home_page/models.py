@@ -18,6 +18,10 @@ class BlogPost(models.Model):
     published_date = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
+    tags = models.CharField(max_length=200, blank=True, null=True)
+    benefits = models.TextField(blank=True)
+    ingredients = models.TextField(blank=True)
+    how_to_use = models.TextField(blank=True)
     
 
     def __str__(self):
@@ -26,11 +30,6 @@ class BlogPost(models.Model):
     def like_count(self):
         return self.likes.count()
 
-
-    #Method for getting an absolute url in order to use it for the gallery-posts showing
-    
-    #def get_absolute_url(self):
-    #    return reverse('post_detail', args=[str(self.id)])
 
 #Comment model for each post
 
@@ -45,23 +44,6 @@ class Comment(models.Model):
 
     def __str__(self):
         return f'Comment by {self.author} on {self.post.title}'
-
-#Tag model
-
-class Tag(models.Model):
-    name = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.name
-
-# BlogPostTag model for many-to-many relationship Blog post/Tag
-
-class BlogPostTag(models.Model):
-    post = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
-    tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f'{self.post.title} - {self.tag.name}'
 
 
 class LikedPost(models.Model):
