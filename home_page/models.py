@@ -9,6 +9,10 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 #Blog post model
 
+class Tag(models.Model):
+    name = models.CharField(max_length=20, unique=True)
+
+
 class BlogPost(models.Model):
     title = models.CharField(max_length=200 ,  unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -18,7 +22,7 @@ class BlogPost(models.Model):
     published_date = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
-    tags = models.CharField(max_length=200, blank=True, null=True)
+    tags = models.ManyToManyField(Tag, related_name="blog_posts", blank=True)
     benefits = models.TextField(blank=True)
     ingredients = models.TextField(blank=True)
     how_to_use = models.TextField(blank=True)

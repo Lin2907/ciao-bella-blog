@@ -16,6 +16,18 @@
         <h3>{{ post.title }}</h3>
         <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
         <p>{{ post.content | safe }}</p>
+        <p><strong>Published on:</strong> {{ blog_post.published_date }}</p>
+        <p><strong>Author:</strong> {{ blog_post.author }}</p>
+        <p>{{ blog_post.tags }}</p>
+        <ul>
+          {% for tag in blog_post.tags.all %}
+          <li>{{ tag.name }}</li>
+          {% endfor %}
+      </ul>
+        <p>{{ post.benefits }}</p>
+        <p>{{ post.ingredients }}</p>
+        <p>{{ post.how_to_use }}</p>
+    </div>
         <p style="color:rgb(214, 10, 112)">Likes: {{ like_count }}</p>
         {% if user.is_authenticated %}
             {% if liked %}
