@@ -27,7 +27,7 @@
         <p>{{ post.benefits }}</p>
         <p>{{ post.ingredients }}</p>
         <p>{{ post.how_to_use }}</p>
-    </div>
+    
         <p style="color:rgb(214, 10, 112)">Likes: {{ like_count }}</p>
         {% if user.is_authenticated %}
             {% if liked %}
@@ -44,6 +44,7 @@
             {% endif %}
             {% endif %}
     </div>
+  
 
     <div class="comments">
         <h2>Comments ({{ comment_count }})</h2>
