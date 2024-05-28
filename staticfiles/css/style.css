@@ -290,13 +290,6 @@
          padding:10px;
        }
 
-    .pagination {
-      border : rgb(240, 9, 125) solid 2px;
-    }
-
-    .page-link {
-      color :rgb(240, 9, 125);
-    }
      
     .btn ,
     .form-control {
