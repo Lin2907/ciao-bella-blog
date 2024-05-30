@@ -10,111 +10,92 @@
       width: 100% ;
     } 
     </style>
-    <title>{{ post.title }}</title>
-
-    <div class="post-detail">
+      <div class="post-detail">
         <h3>{{ post.title }}</h3>
         <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+        <p><strong>Published on:</strong> {{ post.published_date }}</p>
+        <p><strong>Posted by: </strong>{{ post.author }}</p>
         <p>{{ post.content | safe }}</p>
-        <p><strong>Published on:</strong> {{ blog_post.published_date }}</p>
-        <p><strong>Author:</strong> {{ blog_post.author }}</p>
-        <p>{{ blog_post.tags }}</p>
         <ul>
-          {% for tag in blog_post.tags.all %}
-          <li>{{ tag.name }}</li>
-          {% endfor %}
-      </ul>
+            {% for tag in blog_post.tags.all %}
+            <li>{{ tag.name }}</li>
+            {% endfor %}
+        </ul>
         <p>{{ post.benefits }}</p>
         <p>{{ post.ingredients }}</p>
         <p>{{ post.how_to_use }}</p>
-    
         <p style="color:rgb(214, 10, 112)">Likes: {{ like_count }}</p>
         {% if user.is_authenticated %}
-            {% if liked %}
-                <form action="{% url 'unlike_post' post.slug %}" method="POST">
-                    {% csrf_token %}
-                    <button type="submit" style = "color:rgb(214, 10, 112)">Unlike</button>
-                </form>
-            {% else %}
-                <form action="{% url 'like_post' post.slug %}" method="POST">
-                    {% csrf_token %}
-                    <button type="submit" style = "color:rgb(214, 10, 112)" >Like</button> 
-                    
-                </form>
-            {% endif %}
-            {% endif %}
+        {% if liked %}
+        <form action="{% url 'unlike_post' post.slug %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" style="color:rgb(214, 10, 112)">Unlike</button>
+        </form>
+        {% else %}
+        <form action="{% url 'like_post' post.slug %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" style="color:rgb(214, 10, 112)">Like</button>
+        </form>
+        {% endif %}
+        {% endif %}
     </div>
-  
-
+    
     <div class="comments">
         <h2>Comments ({{ comment_count }})</h2>
         {% for comment in comments %}
-            <div class="comment {% if not comment.approved and comment.author == user %}
-            faded{% elif not comment.approved %} d-none{% endif %}">
-                <p><strong>{{ comment.author }}</strong></p>
-                <p>{{ comment.content }}</p>
-                <p>{{ comment.published_date }}</p>
-            </div>
+        <div class="comment {% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}" id="comment{{ comment.id }}">
+            <p><strong>{{ comment.author }}</strong></p>
+            <p class="comment-content">{{ comment.content }}</p>
+            <p>{{ comment.published_date }}</p>
             {% if not comment.approved and comment.author == user %}
-          <p class="approval">
-            This comment is awaiting approval
-          </p>
-          {% endif %}
-          {% if user.is_authenticated and comment.author == user %}
-          <button class="btn btn-delete"comment_id="{{ comment.id }}">Delete</button>
-      <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
-      {% endif %}
+            <p class="approval">This comment is awaiting approval</p>
+            {% endif %}
+            {% if user.is_authenticated and comment.author == user %}
+            <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
+            <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+            {% endif %}
         </div>
         {% endfor %}
     </div>
-
+    
     <div class="comment-form">
         {% if user.is_authenticated %}
         <h2>Leave a Comment</h2>
         <p>Posting as: {{ user.username }}</p>
         <form id="commentForm" method="post">
-        {{ comment_form | crispy }}
-        {% csrf_token %}
-            <button type="submit">Submit</button>
+            {% csrf_token %}
+            {{ comment_form | crispy }}
+            <button type="submit" id="submitButton">Submit</button>
         </form>
         {% else %}
         <p style="color:rgb(240, 9, 125)"><strong>Please Log in to leave a comment or to like this post</strong></p>
         {% endif %}
     </div>
-
+    
     <!-- Confirmation for delete option modal -->
-
-<div class="modal fade" id="deleteModal" tabindex="-1"
-aria-labelledby="deleteModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title"
-        id="deleteModalLabel">Delete comment?</h5>
-      <button type="button" class="btn-close"
-        data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete your comment? This action is not reversible.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="modal-body">
-      Are you sure you want to delete your comment?
-      This action is not reversable.
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary"
-        data-bs-dismiss="modal">Close</button>
-      <a id="deleteConfirm" href="#" class="btn
-        btn-danger">Delete</a>
-    </div>
-  </div>
-</div>
-</div>
-
-{% endblock %}
-
-{% block extras %}
-
-<script src="{% static 'js/comments.js' %}"></script>
-
-{% endblock %}
+    
+    {% endblock %}
+    
+    {% block extras %}
+    <script src="{% static 'js/comments.js' %}"></script>
+    {% endblock %}
 
 
 
