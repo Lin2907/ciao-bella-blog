@@ -16,11 +16,9 @@
         <p><strong>Published on:</strong> {{ post.published_date }}</p>
         <p><strong>Posted by: </strong>{{ post.author }}</p>
         <p>{{ post.content | safe }}</p>
-        <ul>
             {% for tag in blog_post.tags.all %}
-            <li>{{ tag.name }}</li>
+            <p>{{ tag.name }}</p>
             {% endfor %}
-        </ul>
         <p>{{ post.benefits }}</p>
         <p>{{ post.ingredients }}</p>
         <p>{{ post.how_to_use }}</p>

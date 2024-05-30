@@ -1,7 +1,7 @@
 from django.shortcuts import render,get_object_or_404, reverse, redirect
 from django.views import generic
 from django.views.generic import ListView
-from .models import BlogPost, Comment , Tag,LikedPost
+from .models import BlogPost, Comment, LikedPost
 from django.http import HttpResponseRedirect
 from .forms import CommentForm
 from django.contrib import messages

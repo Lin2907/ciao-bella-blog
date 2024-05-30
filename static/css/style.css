@@ -360,7 +360,7 @@
   font-size: 1em;
 }
 
-label { display: none;}
+/*label { display: none;}*/
 
 .comment-form form button {
   width : 200px;
