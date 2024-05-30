@@ -16,12 +16,20 @@
         <p><strong>Published on:</strong> {{ post.published_date }}</p>
         <p><strong>Posted by: </strong>{{ post.author }}</p>
         <p>{{ post.content | safe }}</p>
-            {% for tag in blog_post.tags.all %}
-            <p>{{ tag.name }}</p>
-            {% endfor %}
-        <p>{{ post.benefits }}</p>
-        <p>{{ post.ingredients }}</p>
-        <p>{{ post.how_to_use }}</p>
+        {% if post.benefits %}
+    <h3>Benefits</h3>
+    <p>{{ post.benefits }}</p>
+{% endif %}
+
+{% if post.ingredients %}
+    <h3>Ingredients</h3>
+    <p>{{ post.ingredients }}</p>
+{% endif %}
+
+{% if post.how_to_use %}
+    <h3>How to Use</h3>
+    <p>{{ post.how_to_use }}</p>
+{% endif %}
         <p style="color:rgb(214, 10, 112)">Likes: {{ like_count }}</p>
         {% if user.is_authenticated %}
         {% if liked %}
