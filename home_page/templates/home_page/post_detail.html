@@ -18,29 +18,29 @@
         <p>{{ post.content | safe }}</p>
         {% if post.benefits %}
     <h3>Benefits</h3>
-    <p>{{ post.benefits }}</p>
+    <p>{{ post.benefits| safe }}</p>
 {% endif %}
 
 {% if post.ingredients %}
     <h3>Ingredients</h3>
-    <p>{{ post.ingredients }}</p>
+    <p>{{ post.ingredients| safe}}</p>
 {% endif %}
 
 {% if post.how_to_use %}
     <h3>How to Use</h3>
-    <p>{{ post.how_to_use }}</p>
+    <p>{{ post.how_to_use  | safe}}</p>
 {% endif %}
         <p style="color:rgb(214, 10, 112)">Likes: {{ like_count }}</p>
         {% if user.is_authenticated %}
         {% if liked %}
         <form action="{% url 'unlike_post' post.slug %}" method="POST">
             {% csrf_token %}
-            <button type="submit" style="color:rgb(214, 10, 112)">Unlike</button>
+            <button type="submit" style="color:rgb(214, 10, 112); border:1px solid rgb(214, 10, 112);">Unlike</button>
         </form>
         {% else %}
         <form action="{% url 'like_post' post.slug %}" method="POST">
             {% csrf_token %}
-            <button type="submit" style="color:rgb(214, 10, 112)">Like</button>
+            <button type="submit" style="color:rgb(214, 10, 112); border:1px solid rgb(214, 10, 112);">Like</button>
         </form>
         {% endif %}
         {% endif %}
