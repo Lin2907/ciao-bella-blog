@@ -12,7 +12,6 @@ $(document).ready(function() {
       { src: "static/images/beauty-product.jpg", slug:"taint-makeup" },
       { src: "static/images/cream.jpg", slug:"eye-care"},
       { src: "static/images/spa-products.jpg", slug:"the-world-of-spa-products"},
-      { src: "static/images/make-up.jpg", slug:"the-art-and-benefits-of-makeup"}
     ];
     // Shuffle images for random display
     images.sort(() => Math.random() - 0.5);

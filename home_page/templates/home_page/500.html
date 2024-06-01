@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<style>
+    body {
+      background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://res.cloudinary.com/deb30xqb0/image/upload/v1716060243/mv8uoapmvnk4qqil031b.jpg') no-repeat center fixed;
+      background-size: cover;
+      width: 100% ;
+    } 
+    </style>
+
+    <div class="container">
+        <img src="{% static 'images/500.jpg' %}" alt="Server Error" class="image">
+        <h1>Something Went Wrong</h1>
+        <p>We're experiencing some technical issues. Please try again later.</p>
+        <button><a href="{% url 'index' %}">Return to Home</a></button>
+    </div>
+    {% endblock %}

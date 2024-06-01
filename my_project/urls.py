@@ -24,3 +24,6 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path("", include("home_page.urls"), name="home_page-urls"),
 ]
+
+handler404 = "home_page.views.custom_404"
+handler500 = "home_page.views.custom_500"

@@ -141,3 +141,11 @@ def unlike_post(request, slug):
         messages.info(request, "You must be logged in to unlike a post.")
 
     return redirect('post_detail', slug=slug)
+
+# 404 and 500 error views
+
+def custom_404(request, exception):
+    return render(request, '404.html', status=404)
+
+def custom_500(request):
+    return render(request, '500.html', status=500)
