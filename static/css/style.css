@@ -424,14 +424,14 @@ footer {
     .form-control {
      background-color: white;
      color :rgb(214, 10, 112);
-     border: solid 2px #FAE0ED;
+     border: solid 2px rgb(214, 10, 112);
      font-weight: bold;
     }
  
     .btn:hover {
      background-color: #bef5ea;
      color :darkslategray;
-     border: solid 2px #FAE0ED;
+     border: solid 2px rgb(214, 10, 112);
  
    }
  
