@@ -75,7 +75,7 @@
             <button type="submit" id="submitButton">Submit</button>
         </form>
         {% else %}
-        <p style="color:rgb(240, 9, 125)"><strong>Please Log in to leave a comment or to like this post</strong></p>
+        <p style="color:rgb(240, 9, 125)"><strong>Please <em><a href="{% url 'account_login' %}" style="color:rgb(240, 9, 125)">Log in</a></em> to leave a comment or to like this post</strong></p>
         {% endif %}
     </div>
     
