@@ -30,24 +30,25 @@
     <h3>How to Use</h3>
     <p>{{ post.how_to_use  | safe}}</p>
 {% endif %}
-        <p style="color:rgb(214, 10, 112)">Likes: {{ like_count }}</p>
+        <p style="color:rgb(214, 10, 112)">Likes: {{ like_count }} </p>
         {% if user.is_authenticated %}
         {% if liked %}
         <form action="{% url 'unlike_post' post.slug %}" method="POST">
             {% csrf_token %}
-            <button type="submit" style="color:rgb(214, 10, 112); border:1px solid rgb(214, 10, 112);">Unlike</button>
+            <button type="submit" style="color:rgb(214, 10, 112); border:1px solid rgb(214, 10, 112);">Unlike <i class="fa-light fa-thumbs-up fa-rotate-180"></i></button>
         </form>
         {% else %}
         <form action="{% url 'like_post' post.slug %}" method="POST">
             {% csrf_token %}
-            <button type="submit" style="color:rgb(214, 10, 112); border:1px solid rgb(214, 10, 112);">Like</button>
+            <button type="submit" style="color:rgb(214, 10, 112); border:1px solid rgb(214, 10, 112);">Like<i class="fa-light fa-thumbs-up"></i> </button>
         </form>
         {% endif %}
         {% endif %}
-    </div>
+    </div>        
     
     <div class="comments">
-        <h2>Comments ({{ comment_count }})</h2>
+        <h2>Comments <i class="fa-solid fa-comments fa-lg"></i> ({{ comment_count }}) </h2>
+        
         {% for comment in comments %}
         <div class="comment {% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}" id="comment{{ comment.id }}">
             <p><strong>{{ comment.author }}</strong></p>

@@ -294,7 +294,8 @@
 }
 
 .comments {
-  margin-top: 40px;
+  margin: 40px auto;
+ 
 }
 
 .comments h2 {
