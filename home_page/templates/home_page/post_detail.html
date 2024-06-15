@@ -30,7 +30,7 @@
     <h3>How to Use</h3>
     <p>{{ post.how_to_use  | safe}}</p>
 {% endif %}
-        <p style="color:rgb(214, 10, 112)">Likes: {{ like_count }} </p>
+        <p style="color:rgb(214, 10, 112)"><i class="fa fa-heart" aria-hidden="true"></i> {{ like_count }} </p>
         {% if user.is_authenticated %}
         {% if liked %}
         <form action="{% url 'unlike_post' post.slug %}" method="POST">
