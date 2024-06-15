@@ -35,31 +35,28 @@
         {% if liked %}
         <form action="{% url 'unlike_post' post.slug %}" method="POST">
             {% csrf_token %}
-            <button type="submit" style="color:rgb(214, 10, 112); border:1px solid rgb(214, 10, 112);">Unlike <i class="fa-light fa-thumbs-up fa-rotate-180"></i></button>
+            <button type="submit" style="color:rgb(214, 10, 112); border: transparent; background-color: white;">Unlike <i class="fa fa-thumbs-down" aria-hidden="true"></i></button>
         </form>
         {% else %}
         <form action="{% url 'like_post' post.slug %}" method="POST">
             {% csrf_token %}
-            <button type="submit" style="color:rgb(214, 10, 112); border:1px solid rgb(214, 10, 112);">Like<i class="fa-light fa-thumbs-up"></i> </button>
+            <button type="submit" style="color:rgb(214, 10, 112); border: transparent; background-color: white;">Like <i class="fa fa-thumbs-up" aria-hidden="true"></i> </button>
         </form>
         {% endif %}
         {% endif %}
     </div>        
     
-    <div class="comments">
-        <h2>Comments <i class="fa-solid fa-comments fa-lg"></i> ({{ comment_count }}) </h2>
-        
+    <div class="comments" style="width:60%; margin:auto;">
+        <h2>Comments <i class="fa-solid fa-comments fa-lg"></i> ({{ comment_count }})</h2>
+    
         {% for comment in comments %}
-        <div class="comment {% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}" id="comment{{ comment.id }}">
+        <div class="comment" id="comment{{ comment.id }}">
             <p><strong>{{ comment.author }}</strong></p>
             <p class="comment-content">{{ comment.content }}</p>
             <p>{{ comment.published_date }}</p>
-            {% if not comment.approved and comment.author == user %}
-            <p class="approval">This comment is awaiting approval</p>
-            {% endif %}
             {% if user.is_authenticated and comment.author == user %}
-            <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
-            <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+                <button class="btn btn-delete" comment_id="{{ comment.id }}" style="margin-left: 20px;">Delete</button>
+                <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
             {% endif %}
         </div>
         {% endfor %}
@@ -102,6 +99,7 @@
     
     {% block extras %}
     <script src="{% static 'js/comments.js' %}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
     {% endblock %}
 

@@ -423,6 +423,7 @@ footer {
      
     .btn ,
     .form-control {
+    margin: 20px auto;
      background-color: white;
      color :rgb(214, 10, 112);
      border: solid 2px rgb(214, 10, 112);
