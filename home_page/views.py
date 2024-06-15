@@ -145,7 +145,7 @@ def unlike_post(request, slug):
 # 404 and 500 error views
 
 def custom_404(request, exception):
-    return render(request, '404.html', status=404)
+    return render(request, 'home_page/404.html', status=404)
 
 def custom_500(request):
-    return render(request, '500.html', status=500)
+    return render(request, 'home_page/500.html', status=500)
