@@ -59,7 +59,7 @@
     <div class="col-md-8 offset-md-2">
       {% for message in messages %}
       <div class="alert {{ message.tags }} alert-dismissible
-        fade show" id="msg" role="alert">
+        fade show" id="msg" role="alert" style = "border: 1px solid rgb(240, 9, 125); color:rgb(240, 9, 125);">
         {{ message | safe }}
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>

@@ -45,14 +45,26 @@
         {% endif %}
         {% endif %}
     </div>
-    
+    <ul>
+        {% for tag in tags %}
+            <li>{{ tag.name | safe }}</li>
+        {% endfor %}
+    </ul>
+    <div style = "text-align: center;">
+    <h3>Add a Tag</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ tag_form.as_p }}
+        <button type="submit" name="tag_form" style = "border: solid 1px rgb(240, 9, 125); color : rgb(240, 9, 125); margin-bottom:30px;">Add Tag</button>
+    </form>
+    </div>
     <div class="comments" style="width:60%; margin:auto;">
-        <h2>Comments <i class="fa-solid fa-comments fa-lg"></i> ({{ comment_count }})</h2>
+        <h2 style = "text-align: start;">Comments <i class="fa-solid fa-comments fa-lg"></i> ({{ comment_count | safe}})</h2>
     
         {% for comment in comments %}
         <div class="comment" id="comment{{ comment.id }}">
-            <p><strong>{{ comment.author }}</strong></p>
-            <p class="comment-content">{{ comment.content }}</p>
+            <p><strong>{{ comment.author | safe }}</strong></p>
+            <p class="comment-content">{{ comment.content | safe }}</p>
             <p>{{ comment.published_date }}</p>
             {% if user.is_authenticated and comment.author == user %}
                 <button class="btn btn-delete" comment_id="{{ comment.id }}" style="margin-left: 20px;">Delete</button>

@@ -1,9 +1,9 @@
 from django.shortcuts import render,get_object_or_404, reverse, redirect
 from django.views import generic
 from django.views.generic import ListView
-from .models import BlogPost, Comment, LikedPost
+from .models import BlogPost, Comment, LikedPost, Tag
 from django.http import HttpResponseRedirect
-from .forms import CommentForm
+from .forms import CommentForm ,TagForm
 from django.contrib import messages
 
 # Create your views here.
@@ -24,11 +24,16 @@ def post_detail(request, slug):
     
 # Will display one post from PostList
     post = get_object_or_404(BlogPost, slug=slug , status=1)
+    tags = post.tags.all()
     comments = post.comments.all().order_by("-published_date")
     comment_count = post.comments.filter(approved=True).count()
     liked = False
     if request.user.is_authenticated:
         liked = LikedPost.objects.filter(post=post, user=request.user)
+    
+     # Initialize forms
+    comment_form = CommentForm()
+    tag_form = TagForm()
 
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
@@ -45,7 +50,17 @@ def post_detail(request, slug):
     else:
         # Initialize an empty form if the request method is not POST
         comment_form = CommentForm()
-
+    
+    # Tag 
+    if request.method == 'POST':
+        form = TagForm(request.POST)
+        if tag_form.is_valid():
+            tag_name = tag_form.cleaned_data['name']
+            tag, created = Tag.objects.get_or_create(name=tag_name)
+            post.tags.add(tag)
+            messages.success(request, "Tag added successfully.")
+            return redirect('post_detail', slug=slug)
+    
     return render(
         request,
         "home_page/post_detail.html",
@@ -56,6 +71,9 @@ def post_detail(request, slug):
             "comment_form": comment_form,
             "liked": liked,
             "like_count": post.like_count(),
+            'post': post,
+            'tags': tags, 
+            'tag_form': tag_form,
             
         },
     )
@@ -149,3 +167,4 @@ def custom_404(request, exception):
 
 def custom_500(request):
     return render(request, 'home_page/500.html', status=500)
+
