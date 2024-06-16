@@ -26,7 +26,7 @@ def post_detail(request, slug):
     post = get_object_or_404(BlogPost, slug=slug , status=1)
     tags = post.tags.all()
     comments = post.comments.all().order_by("-published_date")
-    comment_count = post.comments.filter(approved=True).count()
+    comment_count = post.comments.count()
     liked = False
     if request.user.is_authenticated:
         liked = LikedPost.objects.filter(post=post, user=request.user)
