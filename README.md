@@ -3,7 +3,10 @@
 
 
 ### Overview
-About Ciao Bella Blog
+Ciao Bella Blog is a Django-based web application that offers a modern and user-friendly platform for cosmetic tips and products. It includes a homepage with an about section, restaurant recommendation, a product gallery, and an entertaining quiz. 
+
+Additionally, the blog features skincare and product articles , allowing users to read, comment, like, and interact with the content once logged in.
+
 Responsivness images add here
 Live Site
 
@@ -24,7 +27,9 @@ Manual Testing
 Deployment
 Content
 Credits
-User Experience
+
+
+## User Experience
 User Stories
 First Time User
 As a first time user I would like to be able to
