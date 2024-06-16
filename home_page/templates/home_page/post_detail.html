@@ -18,16 +18,19 @@
         <p>{{ post.content | safe }}</p>
         {% if post.benefits %}
     <h3>Benefits</h3>
+    <hr>
     <p>{{ post.benefits| safe }}</p>
 {% endif %}
 
 {% if post.ingredients %}
     <h3>Ingredients</h3>
+    <hr>
     <p>{{ post.ingredients| safe}}</p>
 {% endif %}
 
 {% if post.how_to_use %}
     <h3>How to Use</h3>
+    <hr>
     <p>{{ post.how_to_use  | safe}}</p>
 {% endif %}
         <p style="color:rgb(214, 10, 112)"><i class="fa fa-heart" aria-hidden="true"></i> {{ like_count }} </p>
@@ -44,19 +47,6 @@
         </form>
         {% endif %}
         {% endif %}
-    </div>
-    <ul>
-        {% for tag in tags %}
-            <li>{{ tag.name | safe }}</li>
-        {% endfor %}
-    </ul>
-    <div style = "text-align: center;">
-    <h3>Add a Tag</h3>
-    <form method="post">
-        {% csrf_token %}
-        {{ tag_form.as_p }}
-        <button type="submit" name="tag_form" style = "border: solid 1px rgb(240, 9, 125); color : rgb(240, 9, 125); margin-bottom:30px;">Add Tag</button>
-    </form>
     </div>
     <div class="comments" style="width:60%; margin:auto;">
         <h2 style = "text-align: start;">Comments <i class="fa-solid fa-comments fa-lg"></i> ({{ comment_count | safe}})</h2>

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import BlogPost, Comment, LikedPost ,Tag
+from .models import BlogPost, Comment, LikedPost
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -15,4 +15,3 @@ class PostAdmin(SummernoteModelAdmin):
 
 admin.site.register(Comment)
 admin.site.register(LikedPost)
-admin.site.register(Tag)

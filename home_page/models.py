@@ -4,11 +4,6 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-class Tag(models.Model):
-    name = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.name
 
 class BlogPost(models.Model):
     title = models.CharField(max_length=200 ,  unique=True)
@@ -22,8 +17,6 @@ class BlogPost(models.Model):
     benefits = models.TextField(blank=True)
     ingredients = models.TextField(blank=True)
     how_to_use = models.TextField(blank=True)
-    tags = models.ManyToManyField('Tag', related_name='blog_posts', blank=True)
-
     
     def __str__(self):
         return f"{self.title}"
