@@ -3,50 +3,89 @@
 
 
 ### Overview
-Ciao Bella Blog is a Django-based web application that offers a modern and user-friendly platform for cosmetic tips and products. It includes a homepage with an about section, restaurant recommendation, a product gallery, and an entertaining quiz. 
+Ciao Bella Blog is a Django-based web application that offers a modern and user-friendly platform for cosmetic tips and products.
+<br>
+It includes a homepage with an about section, restaurant recommendation, a product gallery, and an entertaining quiz. 
 
 Additionally, the blog features skincare and product articles , allowing users to read, comment, like, and interact with the content once logged in.
 
-Responsivness images add here
-Live Site
+Responsivness images
 
-### Table of Contents
-User Experience
-Design
-Wireframes
-Site Styling
-Database Design
-Features
-Languages and Technologies
-Languages and Frameworks
-Packages
-Tools and Programs Used
-Testing
-Code Validation
-Manual Testing
-Deployment
-Content
-Credits
+Live Site can be found [here.](https://ciao-bella-blog-52e670d348e8.herokuapp.com/)
+
+## Table of Contents
+### User Experience
+### Design
+### Wireframes
+### Database Design
+### Features
+### Languages and Technologies
+### Packages
+### Tools and Programs Used
+### Testing
+### Code Validation
+### Manual Testing
+### Deployment
+### Content
+### Credits
 
 
 ## User Experience
-User Stories
-First Time User
-As a first time user I would like to be able to
-As a first time user I would like to 
 
-Authenticated User
-As an authenticated user I would like to 
-Site Admin
+### User Stories
+
+  + As a User I can browse the blog and read articles without signing in so that I can explore content freely
+  + As a User I can see a clear option to sign up for an account so that I can access additional features of the blog like commenting and liking articles
+  + As a logged in User I can leave comments on a post so that I can share my thoughts and engage with other users.
+  + As a Site User / Admin I can view comments on an individual post so that I can read the conversation.
+  + As a logged in User I can edit or delete my comments so that I can be involved in the conversation.
+  + As a Site User I can like the articles so that I can show appreciation for content that I enjoy.
+
+
+### Site Admin
+  + As a Site Admin I can create, read, update and delete posts so that I can manage my blog content .
 
 ## Design
+
+### Color Scheme
+
+#### Primary Colors
+  + Dark Washed Rose: `rgb(214, 10, 112)`
+  + White 
+
+  <img src = "static/md-images/main-color.png" alt= "Color used">
+
 ## Wireframes
 
-404 Custom Page
-500 Custom Page
+### Desktop
+
+Home Page <br>
+<img src= "static/md-images/landing-page.png" alt="Home page"> <br>
+Blog Page <br>
+<img src= "static/md-images/stories-page.png" alt="Blog posts page"> <br>
+Register Page <br>
+<img src= "static/md-images/register-page.png" alt="Register page"> <br>
+Log in Page <br>
+<img src= "static/md-images/log-in-page.png" alt="Log in page"> <br>
+404 Error page <br>
+<img src= "static/md-images/404-page.png" alt="Error 404 page"> <br>
+
+### Mobile
+
+Home Page <br>
+<img src= "static/md-images/landing-mobile.png" alt="Home mobile page"> <br>
+Blog Page <br>
+<img src= "static/md-images/posts-page.png" alt="Blog posts mobile page"> <br>
+Register Page <br>
+<img src= "static/md-images/comment-page.png" alt="Detailed post and comment mobile page"> <br>
+Log in Page <br>
+<img src= "static/md-images/500-page.png" alt="Server error page"> <br>
+404 Error page <br>
+<img src= "static/md-images/404-mobile.png" alt="Error 404 page"> <br>
 
 
-### Color
+
+
 
 
 ### Typography
@@ -63,6 +102,8 @@ ERD - Entity Relationship Diagram
 ## Agile Development
 
 ### Project Board
+
+<img src = "static/md-images /project-board.png" alt = "Project Board">
 
 
 ## To easily group my User Stories into a more structured format I created following Epics:
@@ -88,17 +129,19 @@ Kanban
 
 ## Features
  ### Navbar
-The navbar was created using Bootstrap 5 in order to ensure it would be responsive across various viewports. When a user is not signed in the navbar will display the following:
+  + The navbar was created using Bootstrap 5 in order to ensure it would be responsive across various viewports. 
+  + When a user is not signed in the navbar will display the following:
 
-Home
-Skincare
-Register
-Log in
-When the user is signed in the following is instead displayed:
+     * Home
+     * Skincare
+     * Register
+     * Log in
 
-Home
-Skincare
-Log out
+  + When the user is signed in the following is instead displayed:
+
+     * Home
+     * Skincare
+     * Log out
 
 
 Logged in
