@@ -2,16 +2,16 @@
 
 $(document).ready(function() {
     let images = [
-      { src: "static/images/cosmetics.jpg" , slug:"beauty-with-cosmetics-products"},
-      { src: "static/images/medicinal.jpg", slug:"the-power-of-medicinal-products"},
-      { src: "static/images/beauty-products.jpg" , slug :"magical-makeover"},
-      { src: "static/images/self-care.jpg", slug:"the-wellness-ritual" },
-      { src: "static/images/bag.jpg", slug: "fashionable-journey" },
-      { src: "static/images/parfume.jpg", slug:"scented-serenity"},
-      { src: "static/images/creams.jpg",  slug:"glowing-skin" },
-      { src: "static/images/beauty-product.jpg", slug:"taint-makeup" },
-      { src: "static/images/cream.jpg", slug:"eye-care"},
-      { src: "static/images/spa-products.jpg", slug:"the-world-of-spa-products"},
+      { src: "static/images/cosmetics.jpg" ,  alt: "Cosmetic products", slug:"beauty-with-cosmetics-products"},
+      { src: "static/images/medicinal.jpg",  alt: "Medicinal products", slug:"the-power-of-medicinal-products"},
+      { src: "static/images/beauty-products.jpg" ,  alt: "Make up",slug :"magical-makeover"},
+      { src: "static/images/self-care.jpg",  alt: "Spa self care",slug:"the-wellness-ritual" },
+      { src: "static/images/bag.jpg",  alt: "Bag and make-up",slug: "fashionable-journey" },
+      { src: "static/images/parfume.jpg",  alt: "Parfume", slug:"scented-serenity"},
+      { src: "static/images/creams.jpg",  alt: "Creams", slug:"glowing-skin" },
+      { src: "static/images/beauty-product.jpg",  alt: "Taint makeup", slug:"taint-makeup" },
+      { src: "static/images/cream.jpg",  alt: "Cosmetic cream", slug:"eye-care"},
+      { src: "static/images/spa-products.jpg",  alt: "Spa products", slug:"the-world-of-spa-products"},
     ];
     // Shuffle images for random display
     images.sort(() => Math.random() - 0.5);

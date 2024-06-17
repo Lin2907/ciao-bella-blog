@@ -92,7 +92,7 @@
 </style>
 <div id ="post-search">
     <form class="form-inline my-2 my-lg-0" method=POST
-    action="{% url 'search_posts'%}">
+    action="{% url 'search_posts'%}" aria-label="Search posts">
     {% csrf_token %}
         <input class="form-control mr-sm-2" type="search" placeholder="Search Posts" aria-label="Search" name="searched">
         <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
@@ -100,10 +100,10 @@
     </div>
 <div id="posts">
     <div id="column">
-        <!-- Showing only 5 of 10 posts in column -->
+        <!-- Showing only 3 of 10 posts in column -->
         {% for post in object_list|slice:":3" %}
         <div id="blog">
-            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+            <a href="{% url 'post_detail' post.slug %}" class="post-link" aria-label="Blog post detail">
             <div id="pic" href="{% url 'post_detail' post.slug %}">
                 <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
                 <div><h3>{{ post.title }}</h3></div>
@@ -127,10 +127,10 @@
         <nav aria-label="Page Navigation">
             <ul class="pagination justify-content-center">
                 {% if page_obj.has_previous %}
-                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a></li>
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link" aria-label="Previous button">&laquo; PREV</a></li>
                 {% endif %}
                 {% if page_obj.has_next %}
-                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"  aria-label="Previous button"> NEXT &raquo;</a></li>
                 {% endif %}
             </ul>
         </nav>

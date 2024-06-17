@@ -29,7 +29,7 @@
     <!--Navigation Bootstrap-->
     <nav class="navbar navbar-expand-md navbar-dark" id ="colored">
         <a class="navbar-brand" href="{% url 'index' %}"><img src = "{% static 'images/logo.jpg' %}" id = "logo" alt = "Logo Ciao Bella"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-label="Nav button">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -38,7 +38,7 @@
               <a class="nav-link mr-3" aria-current="page" href="{% url 'index' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mr-3" href="{% url 'blogpost_list' %}">Skincare</a>
+              <a class="nav-link mr-3" href="{% url 'blogpost_list' %}" aria-label="Skincare">Skincare</a>
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
@@ -113,13 +113,13 @@
           </ul>
           <ul class ="footer-nav">
             <li >
-              <a href="{% url 'index' %}">Home</a>
+              <a href="{% url 'index' %}" aria-label="Home page">Home</a>
             </li>
             <li>
-              <a href="{% url 'blogpost_list' %}">Skincare</a>
+              <a href="{% url 'blogpost_list' %}" aria-label="Skincare page">Skincare</a>
             </li>    
             <li>
-              <a href="{% url 'account_login' %}">Log in</a>
+              <a href="{% url 'account_login' %}" aria-label="Log in page">Log in</a>
             </li> 
           <p> All rights reserved | <em>ciaobella@gmail.com </em></p>
           </footer> 
