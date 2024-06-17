@@ -1,533 +1,528 @@
 *{                                   /* Wildcard to override the default styles added by the browser*/
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+ }
+
+ /* Main styles */
+
+   body  {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    box-sizing: border-box;
-   }
+    }
+
+  .home {
+    width: 100%;
+    height :70vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('https://res.cloudinary.com/deb30xqb0/image/upload/v1716060243/mv8uoapmvnk4qqil031b.jpg') no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    position: relative;
+}
+
+main > h1 {                                                  /*Main content style*/
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold ;
+    text-decoration: none;
+    font-size: 320%;
+    color: rgb(240, 9, 125);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Class Title - animation */
   
-   /* Main styles */
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    animation: animate 2s linear forwards; 
+            } 
   
-     body  {
-      margin: 0;
-      padding: 0;
+   @keyframes animate { 
+      0% { 
+     width: 0px; 
+    height: 0px; 
+                } 
+   30% { 
+       width: 30%; 
+       height: 0px; 
+                } 
+  
+  60% { 
+       width: 60%; 
+       height: 10vh; 
+     } 
+        
+  100% { width:60%;
+        height:30vh;
       }
-  
-    .home {
-      width: 100%;
-      height :70vh;
-      background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('https://res.cloudinary.com/deb30xqb0/image/upload/v1716060243/mv8uoapmvnk4qqil031b.jpg') no-repeat center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      display: flex;
-      position: relative;
+   } 
+   
+  /* End of Text Animation */
+   /* Logo styles */
+   #logo {
+     display:flex;
+     width :100%;
+     max-height: 100%;
+     }
+
+    .navbar-brand {
+        width : 100px;
+        padding-right:20px;
+    }
+
+    /* Navigation styles*/
+    #colored { background-color: rgb(214, 10, 112) ;
+    }
+
+    #colored a { color:white;
+     letter-spacing: 1px;
+     font-size:100%;
+    }
+
+    /* Galery */
+
+    .gallery {
+     width : 100%;
+     margin :auto ;
+     display:flex;
+     overflow-x: scroll;
+     
+   }
+   .gallery .images{
+    display:inline-flex;
+    flex : none;
+    }
+
+    .gallery::-webkit-scrollbar {
+     display:none;
+    }
+   
+   .image {
+     display: flex;
+     flex-wrap: nowrap;}
+
+   .image-container {
+       width: 25em;
+       margin: 1em;
+     }
+   
+   
+   .image {
+     position:relative;
+     width: 100%;
+     height: auto;
+     cursor: pointer;
+   }
+   
+   
+  .image img:hover {
+   cursor: pointer;
+   transform: scale(1.1);}
+ 
+   
+   .image img {
+     width: 100%;
+     height: auto;
+     transition: transform 0.5s;
+     /*filter: grayscale(70%); */
+   }
+   
+   .text {
+     position: relative;
+     color: rgb(240, 9, 125);
+     font-size: 18px;
+     text-align: center;
+   }
+
+   #posts {
+    display:flex;
+    flex-direction:row;
+    
+   }
+   .gallery-wrap {
+     background-color: white;
+     display:flex;
+     align-items: center;
+     justify-content: center;
+     margin: auto 6em ;
+     padding: 20px;
+ }
+ 
+ #next , #back {
+     width:3%;
+     cursor:pointer;
+     margin:20px;
+ }
+   
+
+   /* About me */
+
+   hr {
+    border: 1px solid rgb(240, 9, 125);
+    width:40%;
+    margin: 5px auto;
+   }
+    .about-me {
+        background-color: rgb(243, 222, 222);
+        padding :20px;
+    }
+
+    .img-fluid {
+      padding-top :30px;
+    }
+
+    p {
+        line-height: 1.6;
+        color : darkslategray;
+        font-size: 90%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #cover-text {
+      z-index: 100;
+      background-color: rgba(244, 200, 236,0.5);
+      position:absolute;
+      color :black;
+      font-size: 250%;
+      font-family: "Dancing Script" , cursive;
+      font-weight: bold;
+      margin-left: 0%;
+      top:53%; 
+    }
+    #cover-text > span {
+      color:rgb(240, 9, 125);
+    }
+
+    h3 {
+      padding:20px;
+      color:rgb(240, 9, 125);
+      font-family: "Dancing Script", cursive;
+      font-size: 250%;
+    }
+
+ /* Recommendation section style */
+ .recommend {
+   margin-left :10%;
+ }
+
+ .col-lg-8  {
+   padding-left:30px;
+ }
+
+  /* Knowledge section styles*/
+  .knowledge {
+   padding-right:10%;
   }
   
-  main > h1 {                                                  /*Main content style*/
-      font-family: 'Dancing Script', cursive;
-      font-weight: bold ;
-      text-decoration: none;
-      font-size: 320%;
-      color: rgb(240, 9, 125);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+  #quiz {
+       width : 60%;
+       height : 15%;
+       border:none;
+       z-index: 100;
+      background-color: rgba( 214,10,112, 0.5);
+      position:absolute;
+      font-size: 130%;
+      font-weight: bold;
+      left: 12%;
+      top:55%; 
     }
-  
-    /* Class Title - animation and process source : Tutorial - https://www.geeksforgeeks.org/how-to-create-text-reveal-effect-using-html-and-css/ */
-    
-    .title {
-      position: absolutee;
-      top: 50%;
-      left: 50%;
-      overflow: hidden;
-      animation: animate 2s linear forwards; 
-              } 
-    
-     @keyframes animate { 
-        0% { 
-       width: 0px; 
-      height: 0px; 
-                  } 
-     30% { 
-         width: 30%; 
-         height: 0px; 
-                  } 
-    
-    60% { 
-         width: 60%; 
-         height: 10vh; 
-       } 
-          
-    100% { width:60%;
-          height:30vh;
-        }
-     } 
-     
-    /* End of Text Animation */
-     /* Logo styles */
-     #logo {
-       display:flex;
-       width :100%;
-       max-height: 100%;
-       }
- 
-      .navbar-brand {
-          width : 100px;
-          padding-right:20px;
-      }
-  
-      /* Navigation styles*/
-      #colored { background-color: rgb(214, 10, 112) ;
-      }
- 
-      #colored a { color:white;
-       font-size: 100%;
-       letter-spacing: 1px;
-      }
-  
-      /* Galery  https://www.youtube.com/watch?v=gzXyRa7jwk4 tutorial */
-      .gallery {
-       width : 100%;
-       margin :auto ;
-       display:flex;
-       overflow-x: scroll;
-       
-     }
-     .gallery .images{
-      display:inline-flex;
-      flex : none;
-      }
- 
-      .gallery::-webkit-scrollbar {
-       display:none;
-      }
-     
-     .image {
-       display: flex;
-       flex-wrap: nowrap;}
- 
-     .image-container {
-         width: 25em;
-         margin: 1em;
-       }
-     
-     
-     .image {
-       position:relative;
-       width: 100%;
-       height: auto;
-       cursor: pointer;
-     }
-     
-     
-    .image img:hover {
-     cursor: pointer;
-     transform: scale(1.1);}
-   
-     
-     .image img {
-       width: 100%;
-       height: auto;
-       transition: transform 0.5s;
-       /*filter: grayscale(70%); */
-     }
-     
-     .text {
-       background-color: aquamarine;
-       position: absolute;
-       top: 50%;
-       left: 50%;
-       transform: translate(-50%, -50%);
-       color: white;
-       font-size: 18px;
-       font-weight: bold;
-       text-align: center;
-     }
-     .gallery-wrap {
-       background-color: white;
-       display:flex;
-       align-items: center;
-       justify-content: center;
-       margin: auto 6em ;
-       padding: 20px;
-   }
-   
-   #next , #back {
-       width:3%;
-       cursor:pointer;
-       margin:20px;
-   }
-     
-  
-     /* About me */
-  
-     hr {
-      border: 1px solid rgb(240, 9, 125);
-      width:40%;
-      margin: 5px auto;
-     }
-      .about-me {
-          background-color: rgb(243, 222, 222);
-          padding :20px;
-      }
-  
-      .img-fluid {
-        padding-top :30px;
-      }
-  
-      p {
-          line-height: 1.6;
-          color : darkslategray;
-          font-size: 90%;
-          font-family: Arial, Helvetica, sans-serif;
-      }
-  
-      #cover-text {
-        z-index: 100;
-        background-color: rgba(244, 200, 236,0.5);
-        position:absolute;
-        color :black;
-        font-size: 250%;
-        font-family: "Dancing Script" , cursive;
-        font-weight: bold;
-        margin-left: 0%;
-        top:53%; 
-      }
-      #cover-text > span {
-        color:rgb(240, 9, 125);
-      }
-  
-      h3 {
-        padding:20px;
-        color:rgb(240, 9, 125);
-        font-family: "Dancing Script", cursive;
-        font-size: 250%;
-      }
- 
-   /* Recommendation section style */
-   .recommend {
-     margin-left :10%;
-   }
- 
-   .col-lg-8  {
-     padding-left:30px;
-   }
- 
-    /* Knowledge section styles*/
-    .knowledge {
-     padding-right:10%;
-    }
-    
-    #quiz {
-         width : 60%;
-         height : 15%;
-         border:none;
-         z-index: 100;
-        background-color: rgba( 214,10,112, 0.5);
-        position:absolute;
-        font-size: 130%;
-        font-weight: bold;
-        left: 12%;
-        top:55%; 
-      }
- 
-      #quiz a {
-       color:white;
-       text-decoration: none;
-      }
- 
-      #quiz a:hover {
-       padding-left:10px;
-      }
- 
-      .frame {
-       margin-top:30px;
-       width :100%;
-       box-shadow: 8px 8px 20px rgba(46,44,57, 0.5) ;
-      
-       }
 
-       
-  
-    /* Footer styles */
-    
-    footer { 
-      background-color:rgb(214, 10, 112);
-      padding:10px;
-      text-align: center;
-      color: white;
-      font-size: 150%;
-      } 
-  
-    footer a { 
+    #quiz a {
      color:white;
-     padding:20px;
+     text-decoration: none;
     }
-  
-   footer a:hover {
-     color: #bef5ea;
-     } 
-  
-    footer ul { 
-      list-style-type: none;
-      text-align: center;
-      padding: 10px;
-      display: flex;
-      justify-content: center;
-    }
-    /* Search styles*/
-     .form-inline{
-       position:relative;
-       display:block;
+
+    .frame {
+     margin-top:30px;
+     width :100%;
+     box-shadow: 8px 8px 20px rgba(46,44,57, 0.5) ;
+    
      }
-     
-     footer p {
-         color:white;
-         font-size: 70%;
-         padding:10px;
-       }
 
-      .btn ,
-      .form-control {
-       background-color: white;
-       color :rgb(214, 10, 112);
-       border: solid 2px rgb(214, 10, 112);
-       font-weight: bold;
-      }
-
-    #sign {
+     #sign {
       margin:20px auto;
       border:5px solid rgb(214, 10, 112);
+     }
+
+     ul { 
+      list-style-type: none;
     }
 
-    ul { 
-      list-style-type: none;
-      }
-    /* The sign up text */
     .helptext {
       font-size: 80%;
     }
 
-    /*Django message styles */ 
-  #msg {
-    background-color: transparent;
-    color:rgb(214, 10, 112);
-    border:1px solid rgb(214, 10, 112);
+
+/*Post detail styles */
+
+.post-detail {
+margin: 20px auto;
+max-width: 50%;
+padding: 20px;
+border: 5px solid rgb(240, 9, 125);
+border-radius: 5px;
+background-color: #fff;
+box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.post-detail img {
+width: 100%;
+height: auto;
+border-radius: 5px;
+}
+
+.post-detail h3 {
+margin-top: 20px;
+font-size: 250%;
+text-align: center;
+
+}
+
+.post-detail p {
+font-size: 100%;
+line-height: 1.6em;
+margin-top: 20px;
+}
+
+.comments {
+margin: 40px auto;
+
+}
+
+.comments h2 {
+text-align: center;
+font-size: 1.5em;
+margin-bottom: 20px;
+color : rgb(240, 9, 125);
+}
+
+.comment {
+border: 3px solid rgb(240, 9, 125);
+padding-bottom: 20px;
+margin: 20px;
+}
+
+
+.comment p {
+margin: 20px;
+text-align: center;
+}
+
+.approval { 
+color: rgb(240, 9, 125);
+text-align: center;
+}
+
+.mb-3 {
+border:  5px solid rgb(240, 9, 125);
+width:60%;
+margin:auto;
+}
+
+.comment-form p {
+text-align: center;
+color: rgb(240, 9, 125);
+font-weight: bold;
+padding-top: 20px;
+
+}
+
+.comment-form {
+margin-top: 40px;
+}
+
+.comment-form h2 {
+text-align: center;
+color : rgb(240, 9, 125);
+font-size: 1.5em;
+}
+
+.comment-form form {
+display: flex;
+flex-direction: column;
+}
+
+.comment-form form input,
+.comment-form form textarea {
+max-width: 80%;
+padding: 10px;
+margin : 20px ;
+border: 1px solid rgb(240, 9, 125);
+border-radius: 5px;
+font-size: 1em;
+}
+
+/*label { display: none;}*/
+
+.comment-form form button {
+width : 200px;
+margin : 20px auto;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+background-color: rgb(240, 9, 125);
+color: white;
+font-size: 1.1em;
+cursor: pointer;
+}
+
+.comment-form form button:hover {
+background-color: rgb(238, 214, 226);
+color:darkslategray;
+border:2px solid rgb(240, 9, 125);
+}
+
+/*End of post detail*/
+
+/* Footer styles */
+  
+footer { 
+background-color:rgb(214, 10, 112);
+padding:10px;
+text-align: center;
+color: white;
+font-size: 150%;
+} 
+
+  footer a { 
+   color:white;
+   padding:20px;
   }
 
-  /*Post detail styles */
+ footer a:hover {
+   color: #bef5ea;
+   } 
 
-  .post-detail {
-    margin: 20px auto;
-    max-width: 50%;
-    padding: 20px;
-    border: 5px solid rgb(240, 9, 125);
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  }
-  
-  .post-detail img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  .post-detail h3 {
-    margin-top: 20px;
-    font-size: 250%;
+  footer ul { 
+    list-style-type: none;
     text-align: center;
-  
-  }
-  
-  .post-detail p {
-    font-size: 100%;
-    line-height: 1.6em;
-    margin-top: 20px;
-  }
-  
-  .comments {
-    margin-top: 40px;
-  }
-  
-  .comments h2 {
-    text-align: center;
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    color : rgb(240, 9, 125);
-  }
-
-  .comment {
-    border: 3px solid rgb(240, 9, 125);
-    padding-bottom: 20px;
-    margin: 20px;
-  }
-  
-  
-  .comment p {
-    margin: 20 px;
-    text-align: center;
-  }
-  
-  .approval { 
-    color: rgb(240, 9, 125);
-    text-align: center;
-  }
-  
-  
-  .mb-3 {
-    border:  5px solid rgb(240, 9, 125);
-    width:60%;
-    margin:auto;
-  }
-  
-  .comment-form p {
-    text-align: center;
-    color: rgb(240, 9, 125);
-    font-weight: bold;
-    padding-top: 20px;
-  
-  }
-  
-  .comment-form {
-    margin-top: 40px;
-  }
-  
-  .comment-form h2 {
-    text-align: center;
-    color : rgb(240, 9, 125);
-    font-size: 1.5em;
-  }
-  
-  .comment-form form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .comment-form form input,
-  .comment-form form textarea {
-    max-width: 80%;
     padding: 10px;
-    margin : 20px ;
-    border: 1px solid rgb(240, 9, 125);
-    border-radius: 5px;
-    font-size: 1em;
+    display: flex;
+    justify-content: center;
   }
-  
-  /*label { display: none;}*/
-  
-  .comment-form form button {
-    width : 200px;
-    margin : 20px auto;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgb(240, 9, 125);
-    color: white;
-    font-size: 1.1em;
-    cursor: pointer;
+  /* Search styles*/
+   .form-inline{
+     position:relative;
+     display:block;
+   }
+   
+   footer p {
+       color:white;
+       font-size: 70%;
+       padding:10px;
+     }
+   
+  .btn ,
+  .form-control {
+  margin: 20px auto;
+   background-color: white;
+   color :rgb(214, 10, 112);
+   border: solid 2px rgb(214, 10, 112);
+   font-weight: bold;
   }
-  
-  .comment-form form button:hover {
-    background-color: rgb(238, 214, 226);
-    color:darkslategray;
-    border:2px solid rgb(240, 9, 125);
-  }
-  
-  /*End of post detail*/
- 
-   .footer-nav {
-     list-style-type: none;
-     display: inline-block;
-   }
-  
-   footer li {
-     font-size: 70%;
-     padding:5px;
-   }
-   .footer-nav a {
-     text-decoration: none;
-   }
 
-  
-  @media only screen and (max-width: 768px) {
-        
-      main > h1 {
-        font-size :230%;
-      }
-  
-      #logo {
-          width :50%;
-          max-height: 50%;
-          }
-     .container {
-       display:flex;
-       flex-direction: column;
-       width:100%;
-       margin:auto;
-     }
- 
-     .frame {
-       width:100%;
-       box-shadow:none;
-     }
- 
-     .knowledge {
-       padding :0 ;
-     }
+  .btn:hover {
+   background-color: #bef5ea;
+   color :darkslategray;
+   border: solid 2px rgb(214, 10, 112);
 
-     #quiz {
-     left: 20%;
-     }
-  
-      .gallery-wrap {
-        display: flex;
-        width :100%;
-        margin:auto;
-      }
- 
-     .images {
-         width: 500%;
-         display: flex;
-         flex-direction: raw;
-     }
- 
-     .images img {
-       width:100%;
-     }
- 
-     #back, #next {
-       width:5%;
-     }
-  
-      #cover-text {
-        z-index: 100;
-        top:75%;
-        font-size: 110%;
-        font-weight: bold;
-      }
-  
-      h3 {
-        font-size:200%;
-        padding-top: 10px;
-      }
+ }
 
-      #posts {
-        display: flex;
-        flex-direction: column;
-        margin: 10px 10px;
-        width: 100%;
+ .footer-nav {
+   list-style-type: none;
+   display: inline-block;
+ }
+
+ footer li {
+   font-size: 70%;
+   padding:5px;
+ }
+ .footer-nav a {
+   text-decoration: none;
+ }
+
+@media only screen and (max-width: 768px) {
+      
+    main > h1 {
+      font-size :230%;
     }
-    #column {
+
+    #logo {
+        width :50%;
+        max-height: 50%;
+        }
+   .container {
+     display:flex;
+     flex-direction: column;
+     width:100%;
+     margin:auto;
+   }
+
+   .frame {
+     width:100%;
+     box-shadow:none;
+   }
+
+   .knowledge {
+     padding :0 ;
+   }
+   #quiz {
+    left: 20%;
+    }
+
+    .gallery-wrap {
+      display: flex;
+      width :100%;
       margin:auto;
-     
     }
 
-    .post-detail {
-      max-width:80%;
+   .images {
+       width: 500%;
+       display: flex;
+       flex-direction: row;
+   }
+
+   .images img {
+     width:100%;
+   }
+
+   #back, #next {
+     width:5%;
+   }
+
+    #cover-text {
+      z-index: 100;
+      top:75%;
+      font-size: 110%;
+      font-weight: bold;
     }
+
+    h3 {
+      font-size:200%;
+      padding-top: 10px;
+    }
+
+    #posts {
+      display: flex;
+      flex-direction: column;
+      margin: 10px 10px;
+      width: 100%;
   }
- 
+
+  #column {
+    margin:auto;
+   
+  }
+  .post-detail {
+    max-width:80%;
+  }
+}

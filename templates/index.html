@@ -57,10 +57,10 @@
     <h3 style = "text-align: center;"> Product picks and Favorites </h3>
     <hr>
     <div class ="gallery-wrap">
-      <img src="{% static 'images/back-arrow.png' %}" id="back" aria-label="Back arrow">  <!---taken from https://icons8.com/icons/set/arrow-->
+      <img src="{% static 'images/back-arrow.png' %}" id="back" alt="Back arrow">  <!---taken from https://icons8.com/icons/set/arrow-->
     <div class="gallery">
       
-<div class="images"></div>
+<div class="images">
       
 </div>
 <img src="{% static 'images/next-arrow.png' %}" id="next" alt="Next arrow">
@@ -73,7 +73,9 @@
     <div class="row justify-content-around">
       <div class="col-lg-8 col-md-12 knowledge">
         <img src="{% static 'images/quiz.jpg' %}" class="frame" alt="Quiz image">
-        <button id ="quiz"><a href="https://lin2907.github.io/general-knowledge-quiz/" target="_blank" aria-label="Take the quiz">Take the Quiz </a></button>
+        <button id ="quiz">
+          <a href="https://lin2907.github.io/general-knowledge-quiz/" target="_blank" aria-label="Take the quiz">Take the Quiz </a>
+        </button>
         </div>
         <div class="col-lg-4 col-md-12">
           <h3> Practice Knowledge...</h3>

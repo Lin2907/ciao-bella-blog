@@ -243,20 +243,25 @@ The following packages were installed throughout the development:
 + [Figma](https://www.figma.com/) and [Balsamiq](https://balsamiq.com/) for creating the wireframes.
 
 ## Testing
-Code Validation
-Lighthouse
-All of the pages for are tested using Google-Lighthouse.
+### Code Validation
+  + Lighthouse
+
+The pages for are tested using Google-Lighthouse.
+
+<img src = "static/md-images/accessibility.png" alt= "Accessibility home page">
+<img src = "static/md-images/blog-accessibility.png" alt= "Accessibility blog page">
+<img src = "static/md-images/login-accessibility.png" alt= "Accessibility login page">
 
 
 # Validation
 
 ## CSS Validation
-For CSS validation W3C-CSS-Validation was used.
+For CSS validation [W3C-CSS-Validator](https://jigsaw.w3.org/css-validator/validator) was used.
 
-
+<img src = "static/md-images/css-validator.png" alt= "CSS Validator">
 
 ## HTML Validation
-HTML markup was validated using W3C-HTML
+HTML markup was validated using [W3C-HTML Validator](https://validator.w3.org/nu/#textarea)
 
 # JavaScript Validation
 JSHINT was used to validate the comment script.
