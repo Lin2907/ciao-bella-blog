@@ -14,20 +14,20 @@ Responsivness images
 Live Site can be found [here.](https://ciao-bella-blog-52e670d348e8.herokuapp.com/)
 
 ## Table of Contents
-### User Experience
-### Design
-### Wireframes
-### Database Design
-### Features
-### Languages and Technologies
-### Packages
-### Tools and Programs Used
-### Testing
-### Code Validation
-### Manual Testing
-### Deployment
-### Content
-### Credits
+- [User Experience](#user-experience)
+- [Design](#design)
+- [Wireframes](#wireframes)
+- [Database Design](#database-design)
+- [Features](#features)
+- [Languages and Technologies](#languages-and-technologies)
+- [Packages](#packages)
+- [Tools and Programs Used](#tools-and-programs-used)
+- [Testing](#testing)
+- [Code Validation](#testing)
+- [Manual Testing](#manual-testing-need-to-do-a-separate-file)
+- [Deployment](#deployment)
+- [Content](#content)
+- [Credits](#credits)
 
 
 ## User Experience
