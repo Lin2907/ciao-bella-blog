@@ -76,174 +76,177 @@ Home Page <br>
 <img src= "static/md-images/landing-mobile.png" alt="Home mobile page"> <br>
 Blog Page <br>
 <img src= "static/md-images/posts-page.png" alt="Blog posts mobile page"> <br>
-Register Page <br>
+Blog detail and comment Page <br>
 <img src= "static/md-images/comment-page.png" alt="Detailed post and comment mobile page"> <br>
-Log in Page <br>
+Server error Page <br>
 <img src= "static/md-images/500-page.png" alt="Server error page"> <br>
 404 Error page <br>
 <img src= "static/md-images/404-mobile.png" alt="Error 404 page"> <br>
 
-
-
-
-
-
 ### Typography
 
+Font used : Dancing Script - gives feminine elegance with its cursive strokes adding a touch of charm and sophistication. 
+
+<img src="static/md-images/dancing-script.png" alt="Font image">
 
 
 ## Database Design
 ERD - Entity Relationship Diagram
 
+<img src="static/md-images/erd.png" alt="Entity Relationship Diagram">
 
 ### Models
 
+#### Blog Post Model
+
+The blog post model is the central model for the entire application. <br>
+Each blog post features essential details like the title, author, content, published date, and a featured image. <br>
+Additionally, posts can include optional attributes: ingredients, how to use, and benefits.
+
+#### User Model
+The User model is Django's built model,used for authentication purposes.
+
+
+#### Comment Model
+
+The Comment model is used to store all of the comments created by the users. It is linked to the Blog Post model so that the comments are correctly aligned with the related blog post.
+
+#### Liked post Model
+
+The Liked post model is created for the purpose of adding a like feature to the posts, where User can express their preferences by liking or unliking blog posts.
 
 ## Agile Development
 
 ### Project Board
 
-<img src = "static/md-images /project-board.png" alt = "Project Board">
+<img src = "static/md-images/project-board.png" alt = "Project Board">
+
+  + MoSCoW
+
+For this project the MoSCoW technique, (Must have, Should have, Could have, Won't have) was essential for planning out the User Stories. 
 
 
-## To easily group my User Stories into a more structured format I created following Epics:
+  + Kanban
 
-  + Initial Set Up
-
-
-  + UX Design
-
-
-  + User Experience
-
-  + User Authentication
-
-
-  + Documentation
-This Epic was used to keep track of what was needed for creating and planning the README.
-
-MoSCoW
-
-
-Kanban
+To help visualise the project and plan accordingly with a schedule the Kanban system is used - implemented through GitHub Projects.
 
 ## Features
- ### Navbar
-  + The navbar was created using Bootstrap 5 in order to ensure it would be responsive across various viewports. 
-  + When a user is not signed in the navbar will display the following:
 
-     * Home
-     * Skincare
-     * Register
-     * Log in
+ ### Navbar
+
+  + The navbar is created using Bootstrap 5 in order to ensure it would be responsive across various viewports. 
+
+   + When a user is not signed in the navbar will display the following:
+
+  <img src = "static/md-images/navbar.png" alt= "Navigation">
 
   + When the user is signed in the following is instead displayed:
 
-     * Home
-     * Skincare
-     * Log out
+  <img src = "static/md-images/navbar-logged.png" alt= "Navigation bar user logged in">
 
 
-Logged in
-
-
-Mobile non-expanded
-
-
-Mobile expanded
-
-
-Footer
+   + Navbar Mobile expanded
+  
+  <img src = "static/md-images/mobile-expanded.png" alt= "Navigation bar mobile">
 
 
 
-Home Page
+### Footer
+
+The footer for this application is containing links to various social media platforms, the navigation and search option.
+
+<img src = "static/md-images/footer.png" alt= "Footer">
+
+### Home Page
+
+#### Landing page hero image 
+
+<img src = "static/md-images/landing-image.png" alt= "Home page">
+
+#### About me Section
+
+<img src = "static/md-images/about-me.png" alt= "About me"> 
+
+#### Gallery Section
+
+The gallery showcases a random selection of images  that highlight the topic of blog posts.
+
+<img src = "static/md-images/gallery.png" alt= "Gallery"> 
 
 
 
+### Blog Page - Skincare
 
+The blog posts page includes search option making it simple for User to find and explore content. <br>
 
+<img src = "static/md-images/blog-posts.png" alt= "Blog post"> 
 
+For better user experience and readability , the posts are spread on more then one page (pagination included). <br>
 
-Blog List Page
+<img src = "static/md-images/pagination.png" alt= "Pagination"> 
 
+### Post Details Page
 
+<img src = "static/md-images/post-detail.png" alt= "Detailed blog post"> 
 
-Search post 
+#### Comments Section
 
+<img src = "static/md-images/comment-section.png" alt= "Comments"> 
 
+#### Like post 
 
+<img src = "static/md-images/likes.png" alt= "Like count"> 
 
-Post Details Page
+#### Optional attributes
 
+<img src = "static/md-images/optional-attributes.png" alt= "Post optional text"> 
 
-
-
-Comments
-
-
-
-
-
-Sign Up
+### Sign Up
 From here if the user does not have an account they may register their account.
 
+<img src = "static/md-images/register.png" alt= "Register account"> 
 
+### Log In
+<img src = "static/md-images/log-in.png" alt= "Login"> 
 
-Log In
+### Log Out
 
-
-
-Log Out
-
-
+<img src = "static/md-images/sign-out.png" alt= "Sign out"> 
 
 
 ## Languages and Technologies
 
-HTML was used for the markup and templating.
-Django as the web framework.
-Python was used for all backend work.
-CSS was used to style the site.
-JavaScript and JQuery were used for managing random products gallery on home page.
-Bootstrap 5 was used throughout some elements for a responsive framekwork.
++ HTML was used for the markup and templating.
++ Django as the web framework.
++ Python was used for all backend work.
++ CSS was used to style the site.
++ JavaScript and JQuery were used for managing random products gallery on home page and updating comments.
++ Bootstrap 5 was used throughout some elements for a responsive framework.
 
 ## Packages
-The following packages were installed throughout the development.
 
-crispy-bootsrap5	This package was used to create a reusable DRY approach to forms.
-Django-allAuth	This package was used to provide templates, views and models necessary for user authentication.
-Summernote was used to allow for a more creative approach when posting to the database through a custom model. Text fields can now have various font and layout styling added to them.
-Whitenoise	was used to allow the app to serve it's own static files which would be needed for deployment.
+The following packages were installed throughout the development:
+
++ Crispy-bootsrap5	- This package was used to create a reusable DRY approach to forms. 
++ Django-allAuth  - This package was used to provide templates, views and models necessary for user authentication. 
++ Summernote  - This was used to allow for a more creative approach when posting to the database through a custom model <br> so the text fields can have various font and layout styling added to them. 
++ Whitenoise- This was used to allow the app to serve it's own static files needed for deployment.
 
 ## Tools and Programs Used
-GitPod was used as the main IDE for the project.
-Git was used for version control.
-GitHub for hosting my repository.
-Heroku was used for deployment.
-FontAwesome for providing all icons used throughout the site.
-ERDplus for creating the database ERD.
-AmIResponsive for creating the README header image.
-Favicon.io for creating a favicon.
-Figma for creating the wireframes.
-Testing
++ [GitPod](https://gitpod.io/workspaces) was used as the main IDE for the project. 
++ [GitHub](https://github.com/) for hosting the repository.
++ [Heroku](https://id.heroku.com/login) was used for deployment.
++ [FontAwesome](https://fontawesome.com/) for providing all icons used throughout the site.
++ [Smartdraw](https://app.smartdraw.com/editor.aspx?credID=-61278721&depoId=55466879&flags=128) for creating the database ERD.
++ [AmIResponsive](https://ui.dev/amiresponsive) for creating the README header image.
++ [Favicon.io](https://favicon.io/) for creating a favicon.
++ [Figma](https://www.figma.com/) and [Balsamiq](https://balsamiq.com/) for creating the wireframes.
+
+## Testing
 Code Validation
 Lighthouse
-All of the pages for this project were tested using Google-Lighthouse.
+All of the pages for are tested using Google-Lighthouse.
 
-## Home Page
-
-
-## Blog post List
-
-
-## Post Detail
-
-
-## Sign up
-
-
-## Sign In
 
 # Validation
 
