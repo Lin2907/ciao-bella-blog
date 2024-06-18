@@ -54,7 +54,7 @@
         {% for comment in comments %}
         <div class="comment" id="comment{{ comment.id }}">
             <p><strong>{{ comment.author | safe }}</strong></p>
-            <p class="comment-content">{{ comment.content | safe }}</p>
+            <p class="comment-content" id="content">{{ comment.content | safe }}</p>
             <p>{{ comment.published_date }}</p>
             {% if user.is_authenticated and comment.author == user %}
                 <button class="btn btn-delete" comment_id="{{ comment.id }}" style="margin-left: 20px;">Delete</button>
@@ -62,6 +62,7 @@
             {% endif %}
         </div>
         {% endfor %}
+     
     </div>
     
     <div class="comment-form">

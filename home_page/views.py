@@ -117,6 +117,7 @@ def comment_delete(request, slug, comment_id):
 
     return HttpResponseRedirect(reverse("post_detail", args=[slug]))
 
+
     #Likes view
 
 def like_post(request, slug):
