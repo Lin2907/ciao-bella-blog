@@ -296,3 +296,25 @@ Mobile : iPhone 11
 The following browsers were used to test the functionality of the site.
 
   + Microsoft Edge , Safari
+
+# Deployment
+
+For this project the application was deployed to Heroku using the following steps:
+
+ + Log into my Heroku account and navigate to the dashboard.
+ + Click on 'New' to create a new app. Set region to EU, click on 'Create app'.
+ + In the 'Settings' tab in 'Reveal Config Vars' add the  environment variables for the Database, Secret Key and CollecStatic.
+ + Navigate to the 'Deploy' tab and under 'Deployment Method' click on 'GitHub'.
+ + Locate the repository from GitHub, paste the link and click 'Connect'.
+ + Ensure that the selected branch is 'main branch' before clicking to Deploy.
+ + Once the build is finished there should be a message saying 'Your app was successfully deployed' with a 'View' button.
+
+# Credits
+  ### Content
+ + Images were taken from Pixabey.
+ + Blog posts were generated with Chat Gpt.
+ + Django and Bootstrap official Documentation, W3 Schools, Code Institute Walkthrough Project.
+ 
+ I would like to say special thanks to my mentor Mitko for helping and supporting me througough this and all previous projects.
+
+ Happy Coding !!!
