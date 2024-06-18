@@ -263,6 +263,24 @@ For CSS validation [W3C-CSS-Validator](https://jigsaw.w3.org/css-validator/valid
 ## HTML Validation
 HTML markup was validated using [W3C-HTML Validator](https://validator.w3.org/nu/#textarea)
 
+ + Home page
+
+<img src = "static/md-images/home-page-html.png" alt= "Html Validator landing page">
+
+ + Blog Posts page
+
+ <img src = "static/md-images/blog-page-validation.png" alt= "Html Validator blog posts page">
+
+ + Search Page
+
+ <img src = "static/md-images/search-page-validation.png" alt= "Html Validator search result page">
+
+ + Detailed post page
+
+ <img src = "static/md-images/detailed-post-validator.png" alt= "Html Validator detailed post page">
+
+Note : Embedded styles are applied due to not showing on site when added in style.css - rest of the errors appear to be caused by Bootstrap and Summernote. Duplicate ID's are caused by different comments added .
+
 # JavaScript Validation
 JSHINT was used to validate the comment script.
 

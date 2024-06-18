@@ -1,4 +1,3 @@
-/*
 const editButtons = document.getElementsByClassName("btn-edit");
 const commentText = document.getElementsById("content");
 const commentForm = document.getElementById("commentForm");
@@ -13,8 +12,7 @@ for (let button of editButtons) {
     button.addEventListener("click", (e) => {
         let commentId = e.target.getAttribute("comment_id");
         let commentContent = document.getElementById(`comment${commentId}`).innerText;
-        //commentText.value = commentContent;
-        document.getElementsById("content").value = commentContent;
+        commentText.value = commentContent;
         submitButton.innerText = "Update";
         commentForm.setAttribute("action", `edit_comment/${commentId}`);
     });
@@ -28,8 +26,8 @@ for (let button of deleteButtons) {
     });
 }
 
-*/
 
+/*
 const editButtons = document.querySelectorAll(".btn-edit");
 const deleteButtons = document.querySelectorAll(".btn-delete");
 const commentForm = document.getElementById("commentForm");
@@ -66,4 +64,4 @@ deleteButtons.forEach(button => {
         deleteConfirm.href = `/delete_comment/${commentId}/`;
         deleteModal.show();
     });
-});
+}); */

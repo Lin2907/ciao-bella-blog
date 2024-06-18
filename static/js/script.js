@@ -33,7 +33,7 @@ $(document).ready(function() {
       image.click(function() {
 
         let postSlug = images[i].slug;
-        window.location.href =`/${postSlug}/`;  // Need to test if it works
+        window.location.href =`/${postSlug}/`;
       }); 
     }
   });
