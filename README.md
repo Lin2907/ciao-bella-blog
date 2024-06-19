@@ -26,7 +26,7 @@ Live Site can be found [here.](https://ciao-bella-blog-52e670d348e8.herokuapp.co
 - [Tools and Programs Used](#tools-and-programs-used)
 - [Testing](#testing)
 - [Code Validation](#testing)
-- [Manual Testing](#manual-testing-need-to-do-a-separate-file)
+- [Manual Testing](#manual-testing)
 - [Deployment](#deployment)
 - [Content](#content)
 - [Credits](#credits)
@@ -296,7 +296,7 @@ JSHINT was used to validate the comment script.
 ### Python Validation
 All of the Python files were validated using PEP8 with CI-Python-Linter
 
-### Manual Testing (need to do a separate file)
+## Manual Testing
 Full testing of the functionality of the site was done on the following devices:
 
 Laptop Used : Samsung Galaxy Book2 Pro 360 Notebook
@@ -305,6 +305,8 @@ Mobile : iPhone 11
 The following browsers were used to test the functionality of the site.
 
   + Microsoft Edge , Safari
+
+## For full testing result please open Testing.md
 
 ## Deployment
 
