@@ -11,14 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const commentId = e.target.getAttribute("comment_id");
             const postSlug = document.querySelector("meta[name='post-slug']").getAttribute("content"); // Retrieve post slug from meta tag
 
-            // Get the content of the specific comment
+            // Get the content of the comment
             const commentContent = document.querySelector(`#comment${commentId} .comment-content`).innerText.trim();
             const commentContentInput = commentForm.querySelector("textarea[name='content'], input[name='content']");
             if (commentContentInput) {
                 commentContentInput.value = commentContent;
             }
 
-            // Update the form action URL
+            // Update the form
             commentForm.setAttribute("action", `/post/${postSlug}/comment_edit/${commentId}/`);
             submitButton.innerText = "Update";
 

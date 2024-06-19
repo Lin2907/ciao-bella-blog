@@ -40,6 +40,7 @@ def post_detail(request, slug):
             comment.author = request.user
             comment.post = post
             comment.save()
+            messages.success(request, 'Your comment is successfully posted.')
             # Reinitialize the form to be empty after saving the comment
             comment_form = CommentForm()
         else:
