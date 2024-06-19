@@ -1,3 +1,71 @@
+
+# Testing
+
+### Code Validation
+  + Lighthouse
+
+The pages for are tested using Google-Lighthouse.
+
+<img src = "static/md-images/accessibility.png" alt= "Accessibility home page">
+<img src = "static/md-images/blog-accessibility.png" alt= "Accessibility blog page">
+<img src = "static/md-images/login-accessibility.png" alt= "Accessibility login page">
+
+
+## Validation
+
+### CSS Validation
+For CSS validation [W3C-CSS-Validator](https://jigsaw.w3.org/css-validator/validator) was used.
+
+<img src = "static/md-images/css-validator.png" alt= "CSS Validator">
+
+### HTML Validation
+HTML markup was validated using [W3C-HTML Validator](https://validator.w3.org/nu/#textarea)
+
+ + Home page
+
+<img src = "static/md-images/home-page-html.png" alt= "Html Validator landing page">
+
+ + Blog Posts page
+
+ <img src = "static/md-images/blog-page-validation.png" alt= "Html Validator blog posts page">
+
+ + Search Page
+
+ <img src = "static/md-images/search-page-validation.png" alt= "Html Validator search result page">
+
+ + Detailed post page
+
+ <img src = "static/md-images/detailed-post-validator.png" alt= "Html Validator detailed post page">
+
+Note : Embedded styles are applied due to not showing on site when added in style.css - rest of the errors appear to be caused by Bootstrap and Summernote. Duplicate ID's are caused by different comments added .
+
+### JavaScript Validation
+[JSHINT](https://jshint.com/) was used to validate Javascript files.
+
+<img src = "static/md-images/script-js.png" alt= "JavaScript Validator">
+<img src = "static/md-images/comments-jshint.png" alt= "JavaScript Validator comments file">
+
+### Python Validation
+Python files were validated using PEP8 [CI-Python-Linter](https://pep8ci.herokuapp.com/)
+
+<img src = "static/md-images/models-py.png" alt= "Python Validator models">
+<img src = "static/md-images/views-py.png" alt= "Python Validator views">
+<img src = "static/md-images/admin-py.png" alt= "Python Validator admin">
+
+
+## Manual Testing
+Full testing of the functionality of the site was done on the following devices:
+
++ Laptop Used : Samsung Galaxy Book2 Pro 360 Notebook
++ Mobile : iPhone 11
+
+The following browsers were used to test the functionality of the site.
+
+  + Microsoft Edge , Safari
+
+
+
+
 | Feature                                 | Expected Result                                                                                                                                                                                        | Steps Taken                                                                          | Actual Result                                                    |
 | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
 | Navigation                              |                                                                                                                                                                                                        |                                                                                      |                                                                  |
@@ -38,3 +106,7 @@
 | User can sign in to<br>their account    | Once the Login link is clicked the user can sign in to their account                                                                                                                                   | Logged in as registred User                                                          | Log in functions correctly                                       |
 | Sign Out Page                           |                                                                                                                                                                                                        |                                                                                      |                                                                  |
 | User can sign out of<br>their account   | Once logged in, User have an option to Log Out of their account                                                                                                                                        | Logged out of the User Account                                                       | Log out functions correctly                                      |
+
+
+## Bugs
+

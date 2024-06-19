@@ -1,4 +1,4 @@
-from django.shortcuts import render,get_object_or_404, reverse, redirect
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
 from django.views.generic import ListView
 from .models import BlogPost, Comment, LikedPost
@@ -8,10 +8,12 @@ from django.contrib import messages
 
 # Create your views here.
 
+
 def index(request):
     return render(request, 'index.html')
 
 # Displays all of blog posts"
+
 
 class PostList(ListView):
     model = BlogPost
@@ -21,16 +23,16 @@ class PostList(ListView):
 
 
 def post_detail(request, slug):
-    
-# Will display one post from PostList
-    post = get_object_or_404(BlogPost, slug=slug , status=1)
+
+    # Will display one post from PostList
+    post = get_object_or_404(BlogPost, slug=slug, status=1)
     comments = post.comments.all().order_by("-published_date")
     comment_count = post.comments.count()
     liked = False
     if request.user.is_authenticated:
         liked = LikedPost.objects.filter(post=post, user=request.user)
-    
-     # Initialize forms
+
+    # Initialize forms
     comment_form = CommentForm()
 
     if request.method == "POST":
@@ -49,7 +51,7 @@ def post_detail(request, slug):
     else:
         # Initialize an empty form if the request method is not POST
         comment_form = CommentForm()
-    
+
     return render(
         request,
         "home_page/post_detail.html",
@@ -61,22 +63,21 @@ def post_detail(request, slug):
             "liked": liked,
             "like_count": post.like_count(),
             'post': post,
-            
         },
     )
-       
+
 
 def search_posts(request):
 
-        if request.method == "POST":
-            searched = request.POST ['searched']
-            posts=BlogPost.objects.filter(title__icontains = searched)
-            
-            return render(
-                request, 'home_page/search_posts.html', 
-                {'searched':searched ,'posts': posts})
+    if request.method == "POST":
+        searched = request.POST['searched']
+        posts = BlogPost.objects.filter(title__icontains=searched)
 
-#Likes view
+    return render(request, 'home_page/search_posts.html',
+                  {'searched': searched, 'posts': posts})
+
+# Likes view
+
 
 def like_post(request, slug):
     post = get_object_or_404(BlogPost, slug=slug)
@@ -89,6 +90,7 @@ def like_post(request, slug):
         messages.info(request, "You must be logged in to like a post.")
 
     return redirect('post_detail', slug=slug)
+
 
 def unlike_post(request, slug):
     post = get_object_or_404(BlogPost, slug=slug)
@@ -107,12 +109,13 @@ def unlike_post(request, slug):
 
 # 404 and 500 error views
 
+
 def custom_404(request, exception):
     return render(request, 'home_page/404.html', status=404)
 
+
 def custom_500(request):
     return render(request, 'home_page/500.html', status=500)
-
 
 
 def comment_edit(request, slug, comment_id):
@@ -129,6 +132,7 @@ def comment_edit(request, slug, comment_id):
             messages.error(request, 'Error updating comment.')
 
     return redirect('post_detail', slug=slug)
+
 
 def comment_delete(request, slug, comment_id):
     post = get_object_or_404(BlogPost, slug=slug, status=1)

@@ -20,13 +20,11 @@ Live Site can be found [here.](https://ciao-bella-blog-52e670d348e8.herokuapp.co
 - [Wireframes](#wireframes)
 - [Database Design](#database-design)
 - [Features](#features)
--[Features left to implement](#features-left-to-implement)
+ -[Features left to implement](#features-left-to-implement)
 - [Languages and Technologies](#languages-and-technologies)
 - [Packages](#packages)
 - [Tools and Programs Used](#tools-and-programs-used)
 - [Testing](#testing)
-- [Code Validation](#testing)
-- [Manual Testing](#manual-testing)
 - [Deployment](#deployment)
 - [Content](#content)
 - [Credits](#credits)
@@ -115,7 +113,7 @@ The Comment model is used to store all of the comments created by the users. It 
 
 #### Liked post Model
 
-The Liked post model is created for the purpose of adding a like feature to the posts, where User can express their preferences by liking or unliking blog posts.
+The Liked post model has the purpose of adding a like feature to the posts, where User can express their preferences by liking or unliking blog posts.
 
 ## Agile Development
 
@@ -175,8 +173,6 @@ The gallery showcases a random selection of images  that highlight the topic of 
 
 <img src = "static/md-images/gallery.png" alt= "Gallery"> 
 
-
-
 ### Blog Page - Skincare
 
 The blog posts page includes search option making it simple for User to find and explore content. <br>
@@ -215,6 +211,10 @@ From here if the user does not have an account they may register their account.
 
 <img src = "static/md-images/sign-out.png" alt= "Sign out"> 
 
+### Custom 404 error page
+
+<img src = "static/md-images/404-custom-page.png" alt= "404 custom error page"> 
+
 ## Features left to implement
 
 + Report Inappropriate Comments or Content: Enable users to flag comments or posts they find inappropriate for review.
@@ -251,62 +251,8 @@ The following packages were installed throughout the development:
 + [Favicon.io](https://favicon.io/) for creating a favicon.
 + [Figma](https://www.figma.com/) and [Balsamiq](https://balsamiq.com/) for creating the wireframes.
 
-## Testing
-### Code Validation
-  + Lighthouse
-
-The pages for are tested using Google-Lighthouse.
-
-<img src = "static/md-images/accessibility.png" alt= "Accessibility home page">
-<img src = "static/md-images/blog-accessibility.png" alt= "Accessibility blog page">
-<img src = "static/md-images/login-accessibility.png" alt= "Accessibility login page">
-
-
-## Validation
-
-### CSS Validation
-For CSS validation [W3C-CSS-Validator](https://jigsaw.w3.org/css-validator/validator) was used.
-
-<img src = "static/md-images/css-validator.png" alt= "CSS Validator">
-
-### HTML Validation
-HTML markup was validated using [W3C-HTML Validator](https://validator.w3.org/nu/#textarea)
-
- + Home page
-
-<img src = "static/md-images/home-page-html.png" alt= "Html Validator landing page">
-
- + Blog Posts page
-
- <img src = "static/md-images/blog-page-validation.png" alt= "Html Validator blog posts page">
-
- + Search Page
-
- <img src = "static/md-images/search-page-validation.png" alt= "Html Validator search result page">
-
- + Detailed post page
-
- <img src = "static/md-images/detailed-post-validator.png" alt= "Html Validator detailed post page">
-
-Note : Embedded styles are applied due to not showing on site when added in style.css - rest of the errors appear to be caused by Bootstrap and Summernote. Duplicate ID's are caused by different comments added .
-
-### JavaScript Validation
-JSHINT was used to validate the comment script.
-
-### Python Validation
-All of the Python files were validated using PEP8 with CI-Python-Linter
-
-## Manual Testing
-Full testing of the functionality of the site was done on the following devices:
-
-Laptop Used : Samsung Galaxy Book2 Pro 360 Notebook
-Mobile : iPhone 11
-
-The following browsers were used to test the functionality of the site.
-
-  + Microsoft Edge , Safari
-
-## For full testing result please open Testing.md
+## Testing 
+ + This section can be found under Testing.md
 
 ## Deployment
 
