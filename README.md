@@ -20,6 +20,7 @@ Live Site can be found [here.](https://ciao-bella-blog-52e670d348e8.herokuapp.co
 - [Wireframes](#wireframes)
 - [Database Design](#database-design)
 - [Features](#features)
+-[Features left to implement](#features-left-to-implement)
 - [Languages and Technologies](#languages-and-technologies)
 - [Packages](#packages)
 - [Tools and Programs Used](#tools-and-programs-used)
@@ -214,6 +215,13 @@ From here if the user does not have an account they may register their account.
 
 <img src = "static/md-images/sign-out.png" alt= "Sign out"> 
 
+## Features left to implement
+
++ Report Inappropriate Comments or Content: Enable users to flag comments or posts they find inappropriate for review.
++ User-Posted Images: Allow users to upload images in their blog posts and comments.
++ Modify Username or Password: Provide functionality for users to update their username and change their password.
++ Reset Password: Implement a password reset feature for users who have forgotten their login credentials.
+
 
 ## Languages and Technologies
 
@@ -228,7 +236,7 @@ From here if the user does not have an account they may register their account.
 
 The following packages were installed throughout the development:
 
-+ Crispy-bootsrap5	- This package was used to create a reusable DRY approach to forms. 
++ Crispy-bootstrap5	- This package was used to create a reusable DRY approach to forms. 
 + Django-allAuth  - This package was used to provide templates, views and models necessary for user authentication. 
 + Summernote  - This was used to allow for a more creative approach when posting to the database through a custom model <br> so the text fields can have various font and layout styling added to them. 
 + Whitenoise- This was used to allow the app to serve it's own static files needed for deployment.
@@ -326,7 +334,7 @@ In order to fork the repository to make a copy the steps are:
 
 ## Credits
   ### Content
- + Images were taken from Pixabey.
+ + Images were taken from Pixabey and [Pexels](https://www.pexels.com/).
  + Blog posts were generated with Chat Gpt.
  + Django and Bootstrap official Documentation, W3 Schools, Code Institute Walkthrough Project.
  
