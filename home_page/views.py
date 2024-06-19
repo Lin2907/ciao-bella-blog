@@ -75,50 +75,7 @@ def search_posts(request):
                 request, 'home_page/search_posts.html', 
                 {'searched':searched ,'posts': posts})
 
-
-def comment_edit(request, slug, comment_id):
-    """
-    view to edit comments
-    """
-    if request.method == "POST":
-
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        comment = get_object_or_404(Comment, pk=comment_id)
-        comment_form = CommentForm(data=request.POST, instance=comment)
-
-        if comment_form.is_valid() and comment.author == request.user:
-            comment = comment_form.save(commit=False)
-            comment.post = post
-            comment.approved = False
-            comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
-        else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
-
-    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-
-
-def comment_delete(request, slug, comment_id):
-    
-    # Comment delete option
-
-    queryset = BlogPost.objects.filter(status=1)
-    post = get_object_or_404(queryset, slug=slug)
-    comment = get_object_or_404(Comment, pk=comment_id)
-
-    if comment.author == request.user:
-        comment.delete()
-        messages.add_message(request, messages.SUCCESS, "Comment Deleted!")
-    else:
-        messages.add_message(
-            request, messages.ERROR, "You can only delete your own comments!"
-        )
-
-    return HttpResponseRedirect(reverse("post_detail", args=[slug]))
-
-
-    #Likes view
+#Likes view
 
 def like_post(request, slug):
     post = get_object_or_404(BlogPost, slug=slug)
@@ -155,3 +112,31 @@ def custom_404(request, exception):
 def custom_500(request):
     return render(request, 'home_page/500.html', status=500)
 
+
+
+def comment_edit(request, slug, comment_id):
+    post = get_object_or_404(BlogPost, slug=slug, status=1)
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    if request.method == "POST":
+        comment_form = CommentForm(data=request.POST, instance=comment)
+
+        if comment_form.is_valid() and comment.author == request.user:
+            comment_form.save()
+            messages.success(request, 'Comment updated successfully.')
+        else:
+            messages.error(request, 'Error updating comment.')
+
+    return redirect('post_detail', slug=slug)
+
+def comment_delete(request, slug, comment_id):
+    post = get_object_or_404(BlogPost, slug=slug, status=1)
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    if comment.author == request.user:
+        comment.delete()
+        messages.success(request, "Comment deleted successfully.")
+    else:
+        messages.error(request, "You can only delete your own comments.")
+
+    return redirect('post_detail', slug=slug)
