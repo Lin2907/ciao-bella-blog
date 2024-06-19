@@ -9,7 +9,8 @@ It includes a homepage with an about section, restaurant recommendation, a produ
 
 Additionally, the blog features skincare and product articles , allowing users to read, comment, like, and interact with the content once logged in.
 
-Responsivness images
+<img src = "static/md-images/responsive-design.png" alt= "Mockup for responsivness"> 
+
 
 Live Site can be found [here.](https://ciao-bella-blog-52e670d348e8.herokuapp.com/)
 
@@ -238,7 +239,7 @@ The following packages were installed throughout the development:
 + [Heroku](https://id.heroku.com/login) was used for deployment.
 + [FontAwesome](https://fontawesome.com/) for providing all icons used throughout the site.
 + [Smartdraw](https://app.smartdraw.com/editor.aspx?credID=-61278721&depoId=55466879&flags=128) for creating the database ERD.
-+ [AmIResponsive](https://ui.dev/amiresponsive) for creating the README header image.
++ [Techsini.com](https://techsini.com/multi-mockup/index.php) for creating the README mockup image.
 + [Favicon.io](https://favicon.io/) for creating a favicon.
 + [Figma](https://www.figma.com/) and [Balsamiq](https://balsamiq.com/) for creating the wireframes.
 
@@ -253,14 +254,14 @@ The pages for are tested using Google-Lighthouse.
 <img src = "static/md-images/login-accessibility.png" alt= "Accessibility login page">
 
 
-# Validation
+## Validation
 
-## CSS Validation
+### CSS Validation
 For CSS validation [W3C-CSS-Validator](https://jigsaw.w3.org/css-validator/validator) was used.
 
 <img src = "static/md-images/css-validator.png" alt= "CSS Validator">
 
-## HTML Validation
+### HTML Validation
 HTML markup was validated using [W3C-HTML Validator](https://validator.w3.org/nu/#textarea)
 
  + Home page
@@ -281,13 +282,13 @@ HTML markup was validated using [W3C-HTML Validator](https://validator.w3.org/nu
 
 Note : Embedded styles are applied due to not showing on site when added in style.css - rest of the errors appear to be caused by Bootstrap and Summernote. Duplicate ID's are caused by different comments added .
 
-# JavaScript Validation
+### JavaScript Validation
 JSHINT was used to validate the comment script.
 
-# Python Validation
+### Python Validation
 All of the Python files were validated using PEP8 with CI-Python-Linter
 
-# Manual Testing (need to do a separate file)
+### Manual Testing (need to do a separate file)
 Full testing of the functionality of the site was done on the following devices:
 
 Laptop Used : Samsung Galaxy Book2 Pro 360 Notebook
@@ -297,19 +298,33 @@ The following browsers were used to test the functionality of the site.
 
   + Microsoft Edge , Safari
 
-# Deployment
+## Deployment
 
 For this project the application was deployed to Heroku using the following steps:
 
- + Log into my Heroku account and navigate to the dashboard.
- + Click on 'New' to create a new app. Set region to EU, click on 'Create app'.
+ + Log into Heroku account and navigate to the dashboard. Click on 'New' to create a new app. Set region to EU, click on 'Create app'.
  + In the 'Settings' tab in 'Reveal Config Vars' add the  environment variables for the Database, Secret Key and CollecStatic.
  + Navigate to the 'Deploy' tab and under 'Deployment Method' click on 'GitHub'.
  + Locate the repository from GitHub, paste the link and click 'Connect'.
  + Ensure that the selected branch is 'main branch' before clicking to Deploy.
  + Once the build is finished there should be a message saying 'Your app was successfully deployed' with a 'View' button.
 
-# Credits
+## Forking the repository
+In order to fork the repository to make a copy the steps are:
+
++ Log into GitHub and locate the repository for https://github.com/Lin2907/ciao-bella-blog
++ At the top of the repository above settings locate the 'Fork' button There is now a copy of the repository in the Github account
+
+## Cloning the repository
++ On GitHub navigate to the main page of the repository
++ Above the list of files click the dropdown code menu
++ Select the https option and copy the link
++ Open the GitPod Bash terminal
++ Change the current working directory to the desired destination location
++ Type the git clone command with the copied URL.
++ Press enter to create the local clone
+
+## Credits
   ### Content
  + Images were taken from Pixabey.
  + Blog posts were generated with Chat Gpt.
@@ -317,4 +332,4 @@ For this project the application was deployed to Heroku using the following step
  
  I would like to say special thanks to my mentor Mitko for helping and supporting me througough this and all previous projects.
 
- Happy Coding !!!
+Enjoy !!!
