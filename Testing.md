@@ -37,7 +37,7 @@ HTML markup was validated using [W3C-HTML Validator](https://validator.w3.org/nu
 
  <img src = "static/md-images/detailed-post-validator.png" alt= "Html Validator detailed post page">
 
-Note : Embedded styles are applied due to not showing on site when added in style.css - rest of the errors appear to be caused by Bootstrap and Summernote. Duplicate ID's are caused by different comments added .
+Note : Embedded styles are applied due to Bootstrap override not showing on site when added in style.css - rest of the errors appear to be caused by Bootstrap and Summernote. Duplicate ID's are caused by different comments added .
 
 ### JavaScript Validation
 [JSHINT](https://jshint.com/) was used to validate Javascript files.
