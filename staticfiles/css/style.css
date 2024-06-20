@@ -505,7 +505,7 @@ font-size: 150%;
     }
 
     h3 {
-      font-size:200%;
+      font-size:180%;
       padding-top: 10px;
     }
 
@@ -521,6 +521,10 @@ font-size: 150%;
    
   }
   .post-detail {
-    max-width:80%;
+    max-width:85%;
   }
+
+  .post-detail p {
+    font-size: 90%;
+}
 }
