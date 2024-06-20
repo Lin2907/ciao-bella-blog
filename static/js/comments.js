@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     deleteButtons.forEach(button => {
         button.addEventListener("click", (e) => {
             const commentId = e.target.getAttribute("comment_id");
-            const postSlug = document.querySelector("meta[name='post-slug']").getAttribute("content"); // Retrieve post slug from meta tag
+            const postSlug = document.querySelector("meta[name='post-slug']").getAttribute("content");
 
             // Update the delete confirm URL
             deleteConfirm.href = `/post/${postSlug}/delete_comment/${commentId}/`;
@@ -38,3 +38,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
