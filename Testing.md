@@ -108,5 +108,33 @@ The following browsers were used to test the functionality of the site.
 | User can sign out of<br>their account   | Once logged in, User have an option to Log Out of their account                                                                                                                                        | Logged out of the User Account                                                       | Log out functions correctly                                      |
 
 
-## Bugs
+# Bugs
+
+### Resolved Issues
++ Django Environment Reinstallation
+
+  + Issue : The Django virtual environment not saved, requesting a complete reinstall of Django and all dependencies multiple times.
+  + Solution: Reinstalled Django and other components using `pip install -r requirements.txt`.
+
++ CSS Overriding Bootstrap
+
+  + Issue : Due to Bootstrap , some custom styles were not applying .
+  + Solution: Used embedded styles within the HTML where needed, to resolve the issue.
+
++ Background Image Not Displaying
+
+  + Issue: The background image not showing when a local path was used.
+  + Solution: Linked the background image from Cloudinary in styles.css.
+
++ Edit Button on Comments Non-Functional
+
+  + Issue: The edit button not functioning.
+  + Solution: Adjusted the JavaScript file and modified the views, resulting in the edit button working as intended.
+
+### Unresolved Issues
+'X' and Close Button Not Working on Delete comments Modal
+
+ + Problem: The 'X' and Close button intended to close the modal are non-functional, user needs to click outside the modal in order to close it.
+
+   + Due to time constraints still not resolved.
 
