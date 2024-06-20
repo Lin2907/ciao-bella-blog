@@ -153,7 +153,7 @@ To help visualise the project and plan accordingly with a schedule the Kanban sy
 
 ### Footer
 
-The footer for is containing links to various social media platforms, the navigation and search option.
+The footer contains links to various social media platforms, the navigation and search option.
 
 <img src = "static/md-images/footer.png" alt= "Footer">
 
