@@ -20,7 +20,7 @@ Live Site can be found [here.](https://ciao-bella-blog-52e670d348e8.herokuapp.co
 - [Wireframes](#wireframes)
 - [Database Design](#database-design)
 - [Features](#features)
- -[Features left to implement](#features-left-to-implement)
+- [Features left to implement](#features-left-to-implement)
 - [Languages and Technologies](#languages-and-technologies)
 - [Packages](#packages)
 - [Tools and Programs Used](#tools-and-programs-used)
@@ -60,7 +60,7 @@ Live Site can be found [here.](https://ciao-bella-blog-52e670d348e8.herokuapp.co
 ### Desktop
 
 Home Page <br>
-<img src= "static/md-images/landing-page.png" alt="Home page"> <br>
+<img src= "static/md-images/home-page.png" alt="Home page"> <br>
 Blog Page <br>
 <img src= "static/md-images/stories-page.png" alt="Blog posts page"> <br>
 Register Page <br>
@@ -99,9 +99,9 @@ ERD - Entity Relationship Diagram
 
 #### Blog Post Model
 
-The blog post model is the central model for the entire application. <br>
-Each blog post features essential details like the title, author, content, published date, and a featured image. <br>
-Additionally, posts can include optional attributes: ingredients, how to use, and benefits.
++ The blog post model is the central model for the entire application. 
++ Each blog post features essential details like the title, author, content, published date, and a featured image. 
++ Additionally, posts can include optional attributes: ingredients, how to use, and benefits.
 
 #### User Model
 The User model is Django's built model,used for authentication purposes.
@@ -140,7 +140,7 @@ To help visualise the project and plan accordingly with a schedule the Kanban sy
 
   <img src = "static/md-images/navbar.png" alt= "Navigation">
 
-  + When the user is signed in the following is instead displayed:
+  + When the user is signed in, the following is instead displayed:
 
   <img src = "static/md-images/navbar-logged.png" alt= "Navigation bar user logged in">
 
@@ -153,7 +153,7 @@ To help visualise the project and plan accordingly with a schedule the Kanban sy
 
 ### Footer
 
-The footer for this application is containing links to various social media platforms, the navigation and search option.
+The footer for is containing links to various social media platforms, the navigation and search option.
 
 <img src = "static/md-images/footer.png" alt= "Footer">
 
@@ -169,7 +169,7 @@ The footer for this application is containing links to various social media plat
 
 #### Gallery Section
 
-The gallery showcases a random selection of images  that highlight the topic of blog posts.
+The gallery showcases a random selection of images that highlight the topic of blog posts.
 
 <img src = "static/md-images/gallery.png" alt= "Gallery"> 
 
@@ -200,9 +200,10 @@ For better user experience and readability , the posts are spread on more then o
 <img src = "static/md-images/optional-attributes.png" alt= "Post optional text"> 
 
 ### Sign Up
-From here if the user does not have an account they may register their account.
+Sing up page, where the User may register their account.
 
 <img src = "static/md-images/register.png" alt= "Register account"> 
+
 
 ### Log In
 <img src = "static/md-images/log-in.png" alt= "Login"> 
@@ -212,6 +213,8 @@ From here if the user does not have an account they may register their account.
 <img src = "static/md-images/sign-out.png" alt= "Sign out"> 
 
 ### Custom 404 error page
+
+A custom 404 error page is designed to improve the user experience by providing a friendly interface when a user lands on a page that doesn't exist.
 
 <img src = "static/md-images/404-custom-page.png" alt= "404 custom error page"> 
 
@@ -281,11 +284,10 @@ In order to fork the repository to make a copy the steps are:
 + Press enter to create the local clone
 
 ## Credits
-  ### Content
- + Images were taken from Pixabey and [Pexels](https://www.pexels.com/).
+ + Images were taken from [Pixabay](https://pixabay.com/de/) and [Pexels](https://www.pexels.com/).
  + Blog posts were generated with Chat Gpt.
  + Django and Bootstrap official Documentation, W3 Schools, Code Institute Walkthrough Project.
  
- I would like to say special thanks to my mentor Mitko for helping and supporting me througough this and all previous projects.
+#### I would like to say special thanks to my mentor Mitko for helping and supporting me througough this and all previous projects.
 
 Enjoy !!!
