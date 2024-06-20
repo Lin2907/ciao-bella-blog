@@ -131,10 +131,3 @@ The following browsers were used to test the functionality of the site.
   + Issue: The edit button not functioning.
   + Solution: Adjusted the JavaScript file and modified the views, resulting in the edit button working as intended.
 
-### Unresolved Issues
-'X' and Close Button Not Working on Delete comments Modal
-
- + Problem: The 'X' and Close button intended to close the modal are non-functional, user needs to click outside the modal in order to close it.
-
-   + Due to time constraints still not resolved.
-
