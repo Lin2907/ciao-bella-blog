@@ -110,7 +110,7 @@ The following browsers were used to test the functionality of the site.
 
 # Bugs
 
-### Resolved Issues
+### Fixed Bugs
 + Django Environment Reinstallation
 
   + Issue : The Django virtual environment not saved, requesting a complete reinstall of Django and all dependencies multiple times.
@@ -131,3 +131,10 @@ The following browsers were used to test the functionality of the site.
   + Issue: The edit button not functioning.
   + Solution: Adjusted the JavaScript file and modified the views, resulting in the edit button working as intended.
 
+### Unresolved Bugs
+
++ 'X' and Close Button Not Working on Delete Comment Modal
+
+  + Issue: The 'X' and Close button intended to close the modal is non-functional.
+
+Due to time constraints this was not resolved yet.
